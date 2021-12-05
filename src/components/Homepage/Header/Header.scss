@@ -1,0 +1,138 @@
+$red-netflix: #e50914;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 15rem;
+  margin: 0.4rem 0 0 1rem;
+}
+
+.btn-sign-in {
+  background-color: $red-netflix;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  height: 2.6rem;
+  width: 5.8rem;
+  margin: 1.6rem 2rem 0 0;
+  font-size: 1.2rem;
+  box-shadow: 0px 12px 16px rgba(14, 8, 11, 0.4);
+}
+
+.header-main-container {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url(../img/landing_page_background.jpg);
+  background-position: top;
+  background-size: cover;
+  height: 76vh;
+  position: relative;
+  text-align: center;
+  width: 100vw;
+  color: #fff;
+}
+
+.btn-get-started {
+  background-color: $red-netflix;
+  border: none;
+  color: #fff;
+}
+
+.header-text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-titles {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  p {
+    margin-top: 0.8rem;
+    font-size: 1.95rem;
+  }
+}
+
+.cta-form-container {
+  width: 80vw;
+
+  p {
+    margin-top: 2.4rem;
+    color: #fff;
+    font-size: 1.44rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+.email-form {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.text-field {
+  padding-left: 0.6rem;
+  width: 30rem;
+  border: none;
+  font-size: 1.2rem;
+  color: #8c8c8c;
+  height: 4rem;
+}
+
+.btn-get-started {
+  padding: 0 1rem 0 1rem;
+  height: 4rem;
+  font-size: 1.95rem;
+  border: none;
+}
+
+.field {
+  position: relative;
+
+  label::before {
+    content: attr(title);
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+    color: #777;
+    font-size: 1.2rem;
+    // animation: form-animation;
+    transition: 0.1s all;
+  }
+
+  input {
+    padding-left: 0.8rem;
+    width: 30rem;
+    border: none;
+    font-size: 1.2rem;
+    color: #111;
+    height: 4rem;
+
+    &:focus {
+      outline: none;
+      padding-top: 1rem;
+    }
+
+    &:focus + label::before {
+      @extend .text-animation;
+    }
+  }
+}
+
+.text-animation {
+  font-size: 1rem;
+  top: 2px;
+  left: 0.3px;
+  font-weight: 700;
+  padding: 0 6px;
+}
