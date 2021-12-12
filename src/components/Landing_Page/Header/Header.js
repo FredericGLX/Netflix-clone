@@ -1,12 +1,17 @@
 import logo from '../img/netflix_logo.png';
 import './Header.scss';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div className="header-main-container">
       <header className="header">
-        <img className="logo" src={logo} alt="netflix logo" />
-        <button className="btn-sign-in">Sign in</button>
+        <Link to="/">
+          <img className="logo" src={logo} alt="netflix logo" />
+        </Link>
+        <Link to="/login">
+          <button className="btn-sign-in">Sign in</button>
+        </Link>
       </header>
       <div className="header-text-container">
         <div className="header-titles">
@@ -24,13 +29,7 @@ const Header = () => {
           </div>
           <div className="email-form">
             <div className="field">
-              <input
-                type="email"
-                name="email"
-                autocomplete="email"
-                maxLength="50"
-                minLength="5"
-              />
+              <input type="text" name="email" required />
               <label
                 className="label-text"
                 for="email"

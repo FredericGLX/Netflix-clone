@@ -5,13 +5,18 @@
   border-top: 0.8rem solid #222;
 }
 
-.main-title {
+.feature-titles {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.feature-main-title {
   padding-top: 3rem;
   font-size: 2.6rem;
   font-weight: 600;
 }
 
-.subtitle {
+.feature-subtitle {
   margin-top: 1rem;
   font-size: 1.625rem;
 }
@@ -19,4 +24,52 @@
 .image-feature {
   width: 90vw;
   margin-bottom: 3rem;
+}
+
+// ***** RESPONSIVE *****
+
+/* 768px display */
+@media (min-width: 48rem) {
+  .feature-main-title {
+    font-size: 3.8rem;
+  }
+
+  .feature-subtitle {
+    font-size: 2rem;
+  }
+  .image-feature {
+    width: 80vw;
+  }
+}
+
+/* 1024px display */
+@media (min-width: 64rem) {
+  .feature-titles {
+    text-align: left;
+    width: 45rem;
+  }
+
+  .feature-main-title {
+    font-size: 5rem;
+  }
+
+  .feature-subtitle {
+    font-size: 2.6rem;
+  }
+
+  .features-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .odd {
+    flex-direction: row;
+  }
+  .even {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .image-feature {
+    width: 42rem;
+  }
 }

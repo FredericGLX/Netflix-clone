@@ -1,13 +1,16 @@
 import Header from './Header/Header';
 import Features from './Features/Features';
+import Faq from './Faq/Faq';
+import './LandingPage.scss';
 
-const Homepage = () => {
+const LandingPage = () => {
   return (
-    <div>
+    <div className="landing-page-container">
       <Header />
       <Features />
+      <Faq />
     </div>
   );
 };
 
-export default Homepage;
+export default LandingPage;

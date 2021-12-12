@@ -1,0 +1,140 @@
+.sign-page-container {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url(./img/landing_page_background.jpg);
+  background-position: top;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18rem;
+  margin: 0.4rem 0 0 1rem;
+}
+
+.sign-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.801);
+  width: 36rem;
+  min-height: 50rem;
+  border-radius: 1px;
+}
+
+.sign-title {
+  text-align: left;
+  font-size: 1.4rem;
+  margin: 4rem 0 2rem 5rem;
+}
+
+.sign-field {
+  position: relative;
+
+  label::before {
+    content: attr(title);
+    position: absolute;
+    top: 1.2rem;
+    left: 6.4rem;
+    font-size: 1.3rem;
+    color: #666;
+
+    transition: 0.05s all;
+  }
+
+  input {
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+
+    height: 4rem;
+    margin-bottom: 1rem;
+    padding-left: 1.4rem;
+    width: 26rem;
+    background-color: #333;
+
+    &:focus,
+    &:valid {
+      padding-top: 1.2rem;
+      outline: none;
+    }
+    &:valid + label::before,
+    &:focus + label::before {
+      @extend .text-animation;
+    }
+  }
+  .text-animation {
+    font-size: 1rem;
+    top: 3px;
+    font-weight: 700;
+  }
+}
+
+.sign-btn-sign-in {
+  background-color: #e50914;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  width: 26rem;
+  height: 4rem;
+  cursor: pointer;
+}
+
+.sign-signup-now {
+  color: #737373;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  font-weight: 500;
+}
+
+.sign-signup-now a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sign-up-link {
+  color: #fff;
+}
+
+.sign-in-link {
+  color: #e50914;
+}
+
+/* 740- px display */
+@media (max-width: 46.25rem) {
+  .sign-page-container {
+    background-image: none;
+    background-color: #000;
+  }
+  .sign-container {
+    // background-color: #777;
+    width: 90%;
+  }
+
+  .sign-field {
+    label::before {
+      left: 10%;
+    }
+    input {
+      width: 90%;
+    }
+  }
+
+  .sign-btn-sign-in {
+    width: 90%;
+  }
+}

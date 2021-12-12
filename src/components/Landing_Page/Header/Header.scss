@@ -20,6 +20,7 @@ $red-netflix: #e50914;
   margin: 1.6rem 2rem 0 0;
   font-size: 1.2rem;
   box-shadow: 0px 12px 16px rgba(14, 8, 11, 0.4);
+  cursor: pointer;
 }
 
 .header-main-container {
@@ -35,7 +36,6 @@ $red-netflix: #e50914;
   height: 90vh;
   position: relative;
   text-align: center;
-  width: 100vw;
   color: #fff;
 }
 
@@ -43,6 +43,11 @@ $red-netflix: #e50914;
   background-color: $red-netflix;
   border: none;
   color: #fff;
+  height: 4rem;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
 }
 
 .header-text-container {
@@ -89,13 +94,6 @@ $red-netflix: #e50914;
   height: 4rem;
 }
 
-.btn-get-started {
-  padding: 0 1rem 0 1rem;
-  height: 4rem;
-  font-size: 1.95rem;
-  border: none;
-}
-
 .field {
   position: relative;
 
@@ -106,7 +104,7 @@ $red-netflix: #e50914;
     left: 1rem;
     color: #777;
     font-size: 1.2rem;
-    transition: 0.1s all;
+    transition: 0.05s all;
   }
 
   input {
@@ -117,11 +115,13 @@ $red-netflix: #e50914;
     color: #111;
     height: 4rem;
 
-    &:focus {
+    &:focus,
+    &:valid {
       outline: none;
       padding-top: 1rem;
     }
 
+    &:valid + label::before,
     &:focus + label::before {
       @extend .text-animation;
     }
@@ -181,8 +181,11 @@ $red-netflix: #e50914;
   }
 }
 
-/* 760px display */
-@media (max-width: 47.5rem) {
+/* 768px display */
+@media (max-width: 48rem) {
+  .header-main-container {
+    height: 71vh;
+  }
   .cta-form-container {
     width: 65vw;
   }
