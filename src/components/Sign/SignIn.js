@@ -1,8 +1,43 @@
+import { useRef, useState } from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
 import './Sign.scss';
 import logo from './img/netflix_logo.png';
-import { Link } from 'react-router-dom';
+import useMounted from '../hooks/useMounted';
 
 const SignIn = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { login, signInWithGoogle } = useAuth();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const mounted = useMounted();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      setError('');
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      navigate('/homepage');
+    } catch {
+      setError('Failed to sign in');
+    }
+    mounted.current && setLoading(false);
+  }
+
+  async function loginWithGoogle() {
+    try {
+      await signInWithGoogle();
+      navigate('/homepage');
+    } catch {
+      setError('Failed to sign in with Google account');
+    }
+  }
+
   return (
     <div className="sign-page-container">
       <Link to="/">
@@ -12,9 +47,11 @@ const SignIn = () => {
         <div className="sign-title">
           <h1>Sign In</h1>
         </div>
-        <div className="sign-form">
+
+        <form className="sign-form" onSubmit={handleSubmit}>
+          {error && alert(error)}
           <div className="sign-field">
-            <input type="text" required />
+            <input type="text" ref={emailRef} autoComplete="email" required />
             <label
               className="sign-label-text"
               for="text"
@@ -23,12 +60,17 @@ const SignIn = () => {
           </div>
 
           <div className="sign-field">
-            <input type="password" required />
+            <input type="password" ref={passwordRef} required />
             <label className="sign-label-text" title="Password"></label>
           </div>
 
-          <button className="sign-btn-sign-in">Sign In</button>
-        </div>
+          <button disabled={loading} className="sign-btn-sign-in" type="submit">
+            Sign In
+          </button>
+          <button className="sign-btn-sign-in" onClick={loginWithGoogle}>
+            Sign In with Google
+          </button>
+        </form>
         <div className="sign-signup-now">
           <p>
             New to Netflix?{' '}

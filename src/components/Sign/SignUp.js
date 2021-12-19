@@ -1,8 +1,38 @@
-import './Sign.scss';
+import { useRef, useState } from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from './img/netflix_logo.png';
-import { Link } from 'react-router-dom';
+import './Sign.scss';
+import useMounted from '../hooks/useMounted';
 
 const SignUp = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const passwordConfirmRef = useRef();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { register } = useAuth();
+  const mounted = useMounted();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError('Password do not match');
+    }
+
+    try {
+      setError('');
+      setLoading(true);
+      await register(emailRef.current.value, passwordRef.current.value);
+      navigate('/homepage');
+    } catch {
+      setError('Failed to create an account');
+    }
+    mounted.current && setLoading(false);
+  }
+
   return (
     <div className="sign-page-container">
       <Link to="/">
@@ -12,36 +42,37 @@ const SignUp = () => {
         <div className="sign-title">
           <h1>Sign Up</h1>
         </div>
-        <div className="sign-form">
-          <div className="sign-field">
-            <input type="text" required />
-            <label
-              className="sign-label-text"
-              for="text"
-              title="Your name"
-            ></label>
-          </div>
 
+        <form className="sign-form" onSubmit={handleSubmit}>
+          {error && alert(error)}
+          {/* Name */}
           <div className="sign-field">
-            <input type="text" required />
-            <label className="sign-label-text" for="text" title="Email"></label>
+            <input type="text" />
+            <label className="sign-label-text" title="Your name"></label>
           </div>
-
+          {/* Email */}
           <div className="sign-field">
-            <input type="password" required />
+            <input type="email" ref={emailRef} autoComplete="email" required />
+            <label className="sign-label-text" title="Email"></label>
+          </div>
+          {/* Password */}
+          <div className="sign-field">
+            <input type="password" ref={passwordRef} required />
             <label className="sign-label-text" title="Password"></label>
           </div>
-
+          {/* Repeat password */}
           <div className="sign-field">
-            <input type="password" required />
+            <input type="password" ref={passwordConfirmRef} required />
             <label
               className="sign-label-text"
               title="Repeat your password"
             ></label>
           </div>
+          <button disabled={loading} className="sign-btn-sign-in" type="submit">
+            Sign In
+          </button>
+        </form>
 
-          <button className="sign-btn-sign-in">Sign In</button>
-        </div>
         <div className="sign-signup-now">
           <p>
             Do you already have an account?{' '}

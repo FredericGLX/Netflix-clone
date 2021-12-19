@@ -2,7 +2,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const Homepage = () => {
-  const { currentUser, logout } = useAuth();
+  const { logout } = useAuth();
   const navigate = useNavigate();
 
   async function handleLogout(e) {
@@ -14,7 +14,7 @@ const Homepage = () => {
 
   return (
     <div>
-      <h1>HOMEPAGE</h1>
+      <h1>TESTTTTTT</h1>
       <button onClick={handleLogout} className="btn-get-started">
         Sign out
       </button>
