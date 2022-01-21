@@ -1,24 +1,17 @@
-import { useAuth } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar/Navbar';
+import Banner from './Banner/Banner';
+import Rows from './Rows/Rows';
+import { ContentProvider } from '../contexts/ContentContext';
 
 const Homepage = () => {
-  const { currentUser, logout } = useAuth();
-  const navigate = useNavigate();
-
-  async function handleLogout(e) {
-    e.preventDefault();
-
-    await logout();
-    navigate('/');
-  }
-
   return (
-    <div>
-      <h1>HOMEPAGE</h1>
-      <button onClick={handleLogout} className="btn-get-started">
-        Sign out
-      </button>
-    </div>
+    <ContentProvider>
+      <div className="homepage-container">
+        <Navbar />
+        <Banner />
+        <Rows />
+      </div>
+    </ContentProvider>
   );
 };
 

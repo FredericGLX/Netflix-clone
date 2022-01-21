@@ -23,7 +23,7 @@ const Movie = (movies, title) => {
 
   movies.length > 0 &&
     movies.map((item, index) => {
-      slides.push(
+      return slides.push(
         <SwiperSlide className="swiper-slide" key={`slide-${index}`}>
           <img
             className="slide-img"
@@ -46,7 +46,7 @@ const Movie = (movies, title) => {
         modules={[Navigation, Pagination]}
         {...customSwiperParameters}
         spaceBetween={0}
-        slidesPerView={6}
+        slidesPerView={2}
         slidesPerGroup={2}
       >
         {slides}
