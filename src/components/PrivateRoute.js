@@ -8,6 +8,6 @@ export default function PrivateRoute() {
   return currentUser ? (
     <Outlet />
   ) : (
-    <Navigate to="/login" replace state={{ from: location }} />
+    <Navigate to="/" replace state={{ from: location }} />
   );
 }

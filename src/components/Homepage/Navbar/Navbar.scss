@@ -1,0 +1,83 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 10%,
+    rgba(0, 0, 0, 0)
+  );
+  transition: all 0.3s ease-out;
+}
+
+.navbar-active {
+  background-color: #000;
+}
+
+.navbar-right {
+  position: absolute;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  right: 10;
+}
+
+.navbar-logo {
+  margin-left: 4px;
+  width: 8rem;
+  cursor: pointer;
+}
+
+.search-icon {
+  cursor: pointer;
+}
+
+.profile-section {
+  cursor: pointer;
+
+  .navbar-avatar {
+    width: 2.8rem;
+    margin-left: 2rem;
+    margin-right: 6px;
+  }
+
+  .navbar-caret {
+    &active {
+      transition: all 0.2s;
+      transform: rotate(180deg);
+    }
+    &inactive {
+      transition: all 0.2s;
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.profile-logout {
+  position: absolute;
+  margin-top: 1rem;
+  background-color: red;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px #000;
+  width: 8rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: default;
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.profile-logout.show {
+  opacity: 1;
+  cursor: pointer;
+}

@@ -20,7 +20,6 @@ function App() {
       <Route path="/login" element={!currentUser ? <SignIn /> : <Homepage />} />
       <Route element={<PrivateRoute />}>
         <Route path="/homepage" element={<Homepage />} />
-        <Route path="/test" element={<Test />} />
       </Route>
     </Routes>
   );

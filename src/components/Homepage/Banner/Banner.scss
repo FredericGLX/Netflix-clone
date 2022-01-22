@@ -1,7 +1,7 @@
 .banner-container {
   position: relative;
   margin-bottom: -5px;
-  height: 85vh;
+  height: 90vh;
   text-align: center;
 
   .banner-image {
@@ -35,7 +35,7 @@
 .banner-content {
   color: #fff;
   position: absolute;
-  top: 65%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
@@ -43,6 +43,7 @@
   .banner-title {
     font-size: 3rem;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    line-height: 1;
   }
 
   .banner-buttons {
@@ -55,17 +56,33 @@
     margin: 2rem 4px 0 2px;
     color: #fff;
     border: none;
-    width: 10rem;
-    height: 3.2rem;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 0.8rem 1.6rem;
+    min-width: 12rem;
+    border-radius: 6px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+
+    .btn-logo {
+      margin-right: 5px;
+    }
   }
 
   .banner-play-btn {
     background-color: #e50914;
+
+    &:hover {
+      background-color: #c50a13;
+    }
   }
   .banner-info-btn {
     background-color: rgba(85, 85, 85, 0.671);
+    &:hover {
+      background-color: rgb(85, 85, 85);
+    }
   }
 
   .banner-content-description {
