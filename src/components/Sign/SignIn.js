@@ -3,7 +3,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import './Sign.scss';
 import logo from './img/netflix_logo.png';
-import useMounted from '../hooks/useMounted';
+import useMounted from '../../hooks/useMounted';
 
 const SignIn = () => {
   const emailRef = useRef();

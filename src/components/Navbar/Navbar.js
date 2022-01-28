@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.scss';
 import logo from './img/netflix_logo.png';
 import avatar from './img/netflix-avatar.png';
-import { BiSearch } from 'react-icons/bi';
+// import { BiSearch } from 'react-icons/bi';
+import SearchBar from '../SearchBar/SearchBar';
 import { AiOutlineCaretDown } from 'react-icons/ai';
 import useScroll from '../../hooks/useScroll';
 
@@ -42,8 +43,7 @@ const Navbar = () => {
           onClick={refreshPage}
         />
         <div className="navbar-right">
-          <BiSearch className="search-icon" size="2.5rem" color="#fff" />
-
+          <SearchBar />
           <div className="profile-section" onClick={handleAvatarClick}>
             <img className="navbar-avatar" src={avatar} alt="avatar logo" />
             <AiOutlineCaretDown

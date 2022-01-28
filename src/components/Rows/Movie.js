@@ -1,7 +1,6 @@
-import { image_url, capitalizeFirstLetter } from '../../helper/helper';
+import { image_url } from '../helper/helper';
 import './Rows.scss';
-import '../../Modal/ModalBtn';
-import { BsPlayCircleFill } from 'react-icons/bs';
+import '../Modal/ModalBtn';
 
 // Swiper
 import { Navigation, Pagination } from 'swiper';
@@ -9,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import 'swiper/swiper.scss';
 import 'swiper/modules/navigation/navigation.scss';
 import 'swiper/modules/pagination/pagination.scss';
-import ModalBtn from '../../Modal/ModalBtn';
+import ModalBtn from '../Modal/ModalBtn';
 
 const Movie = (movies, rowTitle) => {
   const slides = [];
@@ -34,10 +33,6 @@ const Movie = (movies, rowTitle) => {
               }
               alt={item.title}
             />
-            {/* <div className="hover-icons">
-              <BsPlayCircleFill size="2rem" />
-              <span>{item.title}</span>
-            </div> */}
           </ModalBtn>
         </SwiperSlide>
       );

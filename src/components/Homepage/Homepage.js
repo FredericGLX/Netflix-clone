@@ -1,6 +1,6 @@
-import Navbar from './Navbar/Navbar';
-import Banner from './Banner/Banner';
-import Rows from './Rows/Rows';
+import Navbar from '../Navbar/Navbar';
+import Banner from '../Banner/Banner';
+import Rows from '../Rows/Rows';
 import { ContentProvider } from '../contexts/ContentContext';
 
 const Homepage = () => {

@@ -1,5 +1,5 @@
 import Movie from './Movie';
-import { useContentData } from '../../contexts/ContentContext';
+import { useContentData } from '../contexts/ContentContext';
 
 const Rows = () => {
   const {

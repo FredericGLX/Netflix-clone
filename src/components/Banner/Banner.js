@@ -1,9 +1,9 @@
 import './Banner.scss';
-import { image_url } from '../../helper/helper';
-import { useContentData } from '../../contexts/ContentContext';
-import { getRandomNumber, reduceText } from '../../helper/helper';
+import { image_url } from '../helper/helper';
+import { useContentData } from '../contexts/ContentContext';
+import { getRandomNumber, reduceText } from '../helper/helper';
 import { BsPlayFill } from 'react-icons/bs';
-import ModalBtn from '../../Modal/ModalBtn';
+import ModalBtn from '../Modal/ModalBtn';
 import { BiInfoCircle } from 'react-icons/bi';
 
 const Banner = () => {

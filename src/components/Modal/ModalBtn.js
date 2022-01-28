@@ -3,7 +3,7 @@ import { BsPlayFill, BsPlusCircle } from 'react-icons/bs';
 import { useState } from 'react';
 import { image_url, capitalizeFirstLetter } from '../helper/helper';
 import { genres as listGenres } from '../helper/list_genres';
-import useClickOutside from '../hooks/useClickOutside';
+import useClickOutside from '../../hooks/useClickOutside';
 
 const ModalBtn = ({
   children,
