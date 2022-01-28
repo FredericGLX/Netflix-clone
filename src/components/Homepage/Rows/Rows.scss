@@ -5,11 +5,12 @@
 
 .row-container {
   padding-top: 1.6rem;
-  background-color: #000 !important;
+  background-color: #000;
 }
 
 .rows-individual {
   overflow: hidden !important;
+  position: relative;
 
   h1 {
     color: #fff;
@@ -17,10 +18,14 @@
   }
 }
 
-.pagination-fade {
+.title-pagination {
   &:hover {
     .custom-pagination-div {
       opacity: 1;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 1 !important;
     }
   }
 }
@@ -59,6 +64,7 @@
 
 .swiper-slide {
   transition: ease 0.3s all;
+  position: relative;
 
   .slide-img {
     width: 16.5rem;
@@ -67,13 +73,10 @@
 }
 
 // PAGINATION
-.title-pagination {
-  position: relative;
-}
 
 .custom-pagination-div {
   position: absolute;
-  top: 10px;
+  top: -18px;
   right: 4.5%;
   left: initial !important;
   bottom: initial !important;
@@ -97,3 +100,9 @@
     }
   }
 }
+
+// // Hover icons
+// .hover-icons {
+//   color: #fff;
+//   // position: absolute;
+// }

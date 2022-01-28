@@ -10,7 +10,7 @@ export function useContentData() {
 
 export function ContentProvider({ children }) {
   const [bannerShow, setBannerShow] = useState({});
-  const [trendingNowData, setTrendingNowData] = useState([]);
+  const [trendingNowData, setTrendingNowData] = useState({});
   const [popularData, setPopularData] = useState({});
   const [comedyData, setComedyData] = useState({});
   const [horrorData, setHorrorData] = useState({});

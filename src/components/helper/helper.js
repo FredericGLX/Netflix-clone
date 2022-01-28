@@ -35,3 +35,7 @@ export const getRandomNumber = () => {
 export const reduceText = (text, number) => {
   return text?.length > number ? text.substr(0, number - 1) + '...' : text;
 };
+
+export const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};

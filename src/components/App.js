@@ -5,7 +5,6 @@ import Homepage from './Homepage/Homepage';
 import { Routes, Route } from 'react-router-dom';
 import { useAuth } from './contexts/AuthContext';
 import PrivateRoute from './PrivateRoute';
-import Test from './Homepage/Test';
 
 function App() {
   const { currentUser } = useAuth();

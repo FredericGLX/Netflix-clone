@@ -44,6 +44,7 @@
     width: 2.8rem;
     margin-left: 2rem;
     margin-right: 6px;
+    border-radius: 1px;
   }
 
   .navbar-caret {
@@ -74,10 +75,12 @@
   font-size: 1.2rem;
   font-weight: 600;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 500ms;
 }
 
 .profile-logout.show {
   opacity: 1;
   cursor: pointer;
+  pointer-events: initial;
 }

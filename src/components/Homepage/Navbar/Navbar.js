@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import './Navbar.scss';
 import logo from './img/netflix_logo.png';
 import avatar from './img/netflix-avatar.png';
@@ -15,7 +14,7 @@ const Navbar = () => {
   const { logout } = useAuth();
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleAvatarClick = () => {
     if (isAvatarClicked === false) {
       setIsAvatarClicked(true);
     } else {
@@ -23,21 +22,29 @@ const Navbar = () => {
     }
   };
 
-  async function handleLogout(e) {
-    e.preventDefault();
+  const refreshPage = () => {
+    window.location.reload();
+  };
 
+  const handleLogout = async (e) => {
+    e.preventDefault();
     await logout();
     navigate('/');
-  }
+  };
 
   return (
     <div className="test">
       <div className={`navbar-container ${isScrolled && 'navbar-active'}`}>
-        <img className="navbar-logo" src={logo} alt="netflix-logo" />
+        <img
+          className="navbar-logo"
+          src={logo}
+          alt="netflix-logo"
+          onClick={refreshPage}
+        />
         <div className="navbar-right">
           <BiSearch className="search-icon" size="2.5rem" color="#fff" />
 
-          <div className="profile-section" onClick={handleClick}>
+          <div className="profile-section" onClick={handleAvatarClick}>
             <img className="navbar-avatar" src={avatar} alt="avatar logo" />
             <AiOutlineCaretDown
               className={`navbar-caret${
