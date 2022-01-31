@@ -146,14 +146,3 @@
     opacity: 1;
   }
 }
-
-@keyframes moveInDown {
-  0% {
-    opacity: 1;
-    transform: translateY(-10rem);
-  }
-
-  100% {
-    opacity: 0;
-  }
-}

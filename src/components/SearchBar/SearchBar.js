@@ -1,37 +1,47 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { BiSearch } from 'react-icons/bi';
+import './SearchBar.scss';
 import useClickOutside from '../../hooks/useClickOutside';
 
 const SearchBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const inputRef = useRef();
+  const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
 
   const handleClick = () => {
-    if (isOpen) setIsOpen(false);
-    if (!isOpen) setIsOpen(true);
+    if (!isSearchBarOpen) {
+      setIsSearchBarOpen(true);
+      inputRef.current.focus();
+    } else {
+      inputRef.current.blur();
+      setIsSearchBarOpen(false);
+    }
   };
 
-  const domNode = useClickOutside(() => {
-    setIsOpen(false);
+  let domNode = useClickOutside(() => {
+    setIsSearchBarOpen(false);
   });
 
+  const handleChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
   return (
-    <>
-      {isOpen && (
-        <input
-          type="text"
-          placeholder="Search content"
-          ref={domNode}
-          className="searchbar-input"
-        />
-      )}
+    <div className="search-container" ref={domNode}>
+      <input
+        type="text"
+        placeholder="Search content"
+        className="searchbar-input"
+        ref={inputRef}
+        onChange={handleChange}
+      />
       <BiSearch
         className="search-icon"
         size="2.5rem"
         color="#fff"
         onClick={handleClick}
       />
-      ;
-    </>
+    </div>
   );
 };
 
