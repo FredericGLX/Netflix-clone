@@ -6,12 +6,15 @@ import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { AuthProvider } from './components/contexts/AuthContext';
 import { ContentProvider } from './components/contexts/ContentContext';
+import { SearchProvider } from './components/contexts/SearchContext';
 
 ReactDOM.render(
   <BrowserRouter>
     <AuthProvider>
       <ContentProvider>
-        <App />
+        <SearchProvider>
+          <App />
+        </SearchProvider>
       </ContentProvider>
     </AuthProvider>
   </BrowserRouter>,

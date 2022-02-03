@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import './Navbar.scss';
 import logo from './img/netflix_logo.png';
 import avatar from './img/netflix-avatar.png';
@@ -23,8 +23,8 @@ const Navbar = () => {
     }
   };
 
-  const refreshPage = () => {
-    window.location.reload();
+  const handleClickLogo = () => {
+    navigate('/homepage');
   };
 
   const handleLogout = async (e) => {
@@ -40,7 +40,7 @@ const Navbar = () => {
           className="navbar-logo"
           src={logo}
           alt="netflix-logo"
-          onClick={refreshPage}
+          onClick={handleClickLogo}
         />
         <div className="navbar-right">
           <SearchBar />

@@ -5,6 +5,7 @@ import Homepage from './Homepage/Homepage';
 import { Routes, Route } from 'react-router-dom';
 import { useAuth } from './contexts/AuthContext';
 import PrivateRoute from './PrivateRoute';
+import Search from './Search/Search';
 
 function App() {
   const { currentUser } = useAuth();
@@ -19,6 +20,7 @@ function App() {
       <Route path="/login" element={!currentUser ? <SignIn /> : <Homepage />} />
       <Route element={<PrivateRoute />}>
         <Route path="/homepage" element={<Homepage />} />
+        <Route path="/search" element={<Search />} />
       </Route>
     </Routes>
   );

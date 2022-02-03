@@ -10,11 +10,11 @@ import 'swiper/modules/navigation/navigation.scss';
 import 'swiper/modules/pagination/pagination.scss';
 import ModalBtn from '../Modal/ModalBtn';
 
-const Movie = (movies, rowTitle) => {
+const Movie = (props) => {
   const slides = [];
 
-  movies.length > 0 &&
-    movies.map((item, index) => {
+  props.movies.length > 0 &&
+    props.movies.map((item, index) => {
       return slides.push(
         <SwiperSlide className="swiper-slide" key={`slide-${index}`}>
           <ModalBtn
@@ -41,7 +41,7 @@ const Movie = (movies, rowTitle) => {
   return (
     <div className="rows-individual">
       <div className="title-pagination">
-        <h1>{rowTitle}</h1>
+        <h1>{props.rowTitle}</h1>
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={0}

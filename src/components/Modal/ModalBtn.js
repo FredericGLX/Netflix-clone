@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { image_url, capitalizeFirstLetter } from '../helper/helper';
 import { genres as listGenres } from '../helper/list_genres';
 import useClickOutside from '../../hooks/useClickOutside';
+import netflixLogo from '../Search/img/netflix_alt_logo.jpeg';
 
 const ModalBtn = ({
   children,
@@ -44,7 +45,7 @@ const ModalBtn = ({
         <div className="modal-image-container">
           <img
             className="modal-img"
-            src={image_url + image}
+            src={image ? image_url + image : netflixLogo}
             alt={`Poster of ${title}`}
           />
           <div className="modal-icons">

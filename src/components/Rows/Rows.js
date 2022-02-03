@@ -13,12 +13,12 @@ const Rows = () => {
 
   return (
     <div className="row-container">
-      {Movie(popularData, 'Popular on Netflix')}
-      {Movie(comedyData, 'Comedy')}
-      {Movie(trendingNowData, 'Trending Now')}
-      {Movie(animationData, 'Animation')}
-      {Movie(scifiData, 'Science-Fiction')}
-      {Movie(horrorData, 'Horror')}
+      <Movie movies={popularData} rowTitle={'Popular on Netflix'} />
+      <Movie movies={comedyData} rowTitle={'Comedy'} />
+      <Movie movies={scifiData} rowTitle={'Sci-Fi'} />
+      <Movie movies={trendingNowData} rowTitle={'Trending Now'} />
+      <Movie movies={animationData} rowTitle={'Animation'} />
+      <Movie movies={horrorData} rowTitle={'Horror'} />
     </div>
   );
 };

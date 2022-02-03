@@ -9,6 +9,7 @@ export const requests = {
   trending_movies: base_url + '/trending/movie/day?' + API_KEY,
   trending_tv_shows: base_url + '/trending/tv/day?' + API_KEY,
   popular: base_url + '/movie/popular?' + API_KEY,
+  // search: base_url + '/search/keyword?' + API_KEY + '&page=1',
   genre: base_url + '/genre/movie/list?' + API_KEY,
   comedy:
     base_url + '/discover/movie?' + API_KEY + `&with_genres=${genres.comedy}`,
