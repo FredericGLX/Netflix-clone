@@ -1,19 +1,18 @@
 .modal-overlay {
   position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
+  height: 100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
-  animation: moveInUp 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-window {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 90vw;
   height: 90vh;
   z-index: 100;
@@ -92,7 +91,7 @@
   .modal-title {
     font-size: 2.2rem;
     font-weight: 600;
-    animation: moveInUp 0.3s ease-out;
+    animation: moveInUp 0.6s ease-out;
   }
 
   .modal-description {
@@ -100,36 +99,47 @@
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.7;
-    animation: moveInUp 0.4s ease-out;
+    animation: moveInUp 0.7s ease-out;
   }
 
   hr {
     background-color: #000;
     border-bottom: 0;
-    animation: moveInUp 0.5s ease-out;
+    animation: moveInUp 0.8s ease-out;
   }
 
   .modal-info {
-    p {
-      color: #777;
-      font-size: 1.3rem;
-      line-height: 2;
-      animation: moveInUp 0.7s ease-out;
-
-      span {
-        color: #fff;
-      }
-    }
-
     .modal-about {
       margin-top: 1.4rem;
       margin-bottom: 1.4rem;
       font-size: 1.6rem;
       font-weight: 400;
-      animation: moveInUp 0.6s ease-out;
+      animation: moveInUp 0.9s ease-out;
 
       .modal-info-title {
         font-weight: 600;
+      }
+    }
+    p {
+      color: #777;
+      font-size: 1.3rem;
+      line-height: 2;
+
+      &.modal-p1 {
+        animation: moveInUp 1s ease-out;
+      }
+      &.modal-p2 {
+        animation: moveInUp 1.1s ease-out;
+      }
+      &.modal-p3 {
+        animation: moveInUp 1.2s ease-out;
+      }
+      &.modal-p4 {
+        animation: moveInUp 1.3s ease-out;
+      }
+
+      span {
+        color: #fff;
       }
     }
   }
@@ -139,9 +149,11 @@
 @keyframes moveInUp {
   0% {
     opacity: 0;
-    transform: translateY(10rem);
+    transform: translateY(15rem);
   }
-
+  70% {
+    opacity: 0.1;
+  }
   100% {
     opacity: 1;
   }

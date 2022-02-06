@@ -71,17 +71,17 @@ const ModalBtn = ({
             <div className="modal-about">
               About <span className="modal-info-title">{title}</span>
             </div>
-            <p>
+            <p className="modal-p1">
               Genres:{' '}
               <span>{capitalizeFirstLetter(genreArray.join(', '))}</span>
             </p>
-            <p>
+            <p className="modal-p2">
               Release date: <span>{date}</span>
             </p>
-            <p>
+            <p className="modal-p3">
               Original language: <span>{language}</span>
             </p>
-            <p>
+            <p className="modal-p4">
               Average vote: <span>{vote}</span>
             </p>
           </div>
