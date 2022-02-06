@@ -5,24 +5,50 @@ import { getRandomNumber, reduceText } from '../helper/helper';
 import { BsPlayFill } from 'react-icons/bs';
 import ModalBtn from '../Modal/ModalBtn';
 import { BiInfoCircle } from 'react-icons/bi';
+import { motion } from 'framer-motion';
+import {
+  bannerFade,
+  bannerTitle,
+  bannerBtn,
+  bannerCaption,
+} from '../helper/motionHelper';
 
 const Banner = () => {
   const { trendingNowData } = useContentData();
   const num = getRandomNumber();
 
   return (
-    trendingNowData.length > 0 &&
-    trendingNowData[num].title !== undefined && (
-      <div className="banner-container">
+    trendingNowData.length > 0 && (
+      <motion.div
+        className="banner-container"
+        variants={bannerFade}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+      >
         <img
           className="banner-image"
           src={image_url + trendingNowData[num].poster_path}
           alt="main trending movie"
         />
         <div className="banner-content">
-          <h1 className="banner-title">{trendingNowData[num].title}</h1>
+          <motion.h1
+            className="banner-title"
+            variants={bannerTitle}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            {trendingNowData[num].title}
+          </motion.h1>
 
-          <div className="banner-buttons">
+          <motion.div
+            className="banner-buttons"
+            variants={bannerBtn}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
             <button className="banner-play-btn">
               <BsPlayFill size="2rem" className="btn-logo" />
               Play
@@ -42,13 +68,19 @@ const Banner = () => {
                 More info
               </button>
             </ModalBtn>
-          </div>
-          <p className="banner-content-description">
+          </motion.div>
+          <motion.p
+            className="banner-content-description"
+            variants={bannerCaption}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
             {reduceText(trendingNowData[num].overview, 150)}
-          </p>
+          </motion.p>
         </div>
         <div className="banner-bottom-fade"></div>
-      </div>
+      </motion.div>
     )
   );
 };

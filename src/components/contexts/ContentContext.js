@@ -9,7 +9,6 @@ export function useContentData() {
 }
 
 export function ContentProvider({ children }) {
-  const [bannerShow, setBannerShow] = useState({});
   const [trendingNowData, setTrendingNowData] = useState({});
   const [popularData, setPopularData] = useState({});
   const [comedyData, setComedyData] = useState({});
@@ -22,9 +21,6 @@ export function ContentProvider({ children }) {
   const fetchTrendingNow = async () => {
     const { data } = await axios.get(requests.fetchTrending);
     setTrendingNowData(data.results);
-    // The movie/show data will change after every refresh + prevent rendering object with no title
-    const num = getRandomNumber();
-    if (data.results[num].title !== undefined) setBannerShow(data.results[num]);
   };
 
   const fetchPopular = async () => {
@@ -63,7 +59,6 @@ export function ContentProvider({ children }) {
   }, []);
 
   const value = {
-    bannerShow,
     trendingNowData,
     popularData,
     comedyData,

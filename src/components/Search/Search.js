@@ -6,16 +6,22 @@ import { capitalizeFirstLetter } from '../helper/helper';
 import ModalBtn from '../Modal/ModalBtn';
 import { image_url } from '../helper/helper';
 import netflixLogo from './img/netflix_alt_logo.jpeg';
+import { motion } from 'framer-motion';
+import { basicFade } from '../helper/motionHelper';
 
 const Search = () => {
   const { searchContent, query } = useContext(SearchContext);
 
-  console.log('results ==>', searchContent);
-
   return (
     <>
       <Navbar />
-      <div className="search-container">
+      <motion.div
+        className="search-container"
+        variants={basicFade}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+      >
         <div>
           <h1 className="search-title">
             Search results for: {query ? capitalizeFirstLetter(query) : ''}
@@ -47,7 +53,7 @@ const Search = () => {
               })}
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

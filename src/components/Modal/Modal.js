@@ -2,38 +2,16 @@ import ReactDom from 'react-dom';
 import './Modal.scss';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { motion, AnimatePresence } from 'framer-motion';
+import { modalPopUp, basicFade } from '../helper/motionHelper';
 
 const Modal = ({ open, children, onClose, domNodeRef }) => {
-  const modalPopUp = {
-    hidden: {
-      y: '100vh',
-      opacity: 0,
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
-  const bannerFade = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-    },
-  };
-
   return ReactDom.createPortal(
     <AnimatePresence exitBeforeEnter={true}>
       {open && (
         <>
           <motion.div
             className="modal-overlay"
-            variants={bannerFade}
+            variants={basicFade}
             initial="hidden"
             animate="visible"
             exit="hidden"
