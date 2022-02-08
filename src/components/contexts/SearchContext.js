@@ -4,12 +4,16 @@ import axios from 'axios';
 export const SearchContext = React.createContext();
 
 export function SearchProvider({ children }) {
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState('');
   const [searchContent, setSearchContent] = useState({});
 
   const searchHandler = (query) => {
     setQuery(query);
-    fetchSearch(query);
+    if (query !== '') {
+      fetchSearch(query);
+    } else {
+      setSearchContent({});
+    }
   };
 
   const fetchSearch = async (searchTerms) => {

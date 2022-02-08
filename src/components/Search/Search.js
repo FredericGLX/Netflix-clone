@@ -7,7 +7,7 @@ import ModalBtn from '../Modal/ModalBtn';
 import { image_url } from '../helper/helper';
 import netflixLogo from './img/netflix_alt_logo.jpeg';
 import { motion } from 'framer-motion';
-import { basicFade } from '../helper/motionHelper';
+import { searchPageFade } from '../helper/motionHelper';
 
 const Search = () => {
   const { searchContent, query } = useContext(SearchContext);
@@ -17,14 +17,15 @@ const Search = () => {
       <Navbar />
       <motion.div
         className="search-container"
-        variants={basicFade}
+        variants={searchPageFade}
         initial="hidden"
         animate="visible"
         exit="hidden"
       >
         <div>
           <h1 className="search-title">
-            Search results for: {query ? capitalizeFirstLetter(query) : ''}
+            Search results for:{' '}
+            {query.length > 0 ? capitalizeFirstLetter(query) : ''}
           </h1>
           <div className="search-results">
             {searchContent.length > 0 &&

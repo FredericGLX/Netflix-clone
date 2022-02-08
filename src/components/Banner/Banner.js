@@ -6,12 +6,7 @@ import { BsPlayFill } from 'react-icons/bs';
 import ModalBtn from '../Modal/ModalBtn';
 import { BiInfoCircle } from 'react-icons/bi';
 import { motion } from 'framer-motion';
-import {
-  bannerFade,
-  bannerTitle,
-  bannerBtn,
-  bannerCaption,
-} from '../helper/motionHelper';
+import { bannerFade, bannerTitle, bannerCaption } from '../helper/motionHelper';
 
 const Banner = () => {
   const { trendingNowData } = useContentData();
@@ -31,10 +26,10 @@ const Banner = () => {
           src={image_url + trendingNowData[num].poster_path}
           alt="main trending movie"
         />
-        <div className="banner-content">
+        <motion.div className="banner-content">
           <motion.h1
             className="banner-title"
-            variants={bannerTitle}
+            variants={bannerFade}
             initial="hidden"
             animate="visible"
             exit="hidden"
@@ -44,7 +39,7 @@ const Banner = () => {
 
           <motion.div
             className="banner-buttons"
-            variants={bannerBtn}
+            variants={bannerTitle}
             initial="hidden"
             animate="visible"
             exit="hidden"
@@ -78,7 +73,7 @@ const Banner = () => {
           >
             {reduceText(trendingNowData[num].overview, 150)}
           </motion.p>
-        </div>
+        </motion.div>
         <div className="banner-bottom-fade"></div>
       </motion.div>
     )

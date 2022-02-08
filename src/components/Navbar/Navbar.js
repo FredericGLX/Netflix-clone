@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.scss';
 import logo from './img/netflix_logo.png';
 import avatar from './img/netflix-avatar.png';
-// import { BiSearch } from 'react-icons/bi';
 import SearchBar from '../SearchBar/SearchBar';
 import { AiOutlineCaretDown } from 'react-icons/ai';
 import useScroll from '../../hooks/useScroll';
@@ -24,7 +23,7 @@ const Navbar = () => {
   };
 
   const handleClickLogo = () => {
-    navigate('/homepage');
+    window.location.reload();
   };
 
   const handleLogout = async (e) => {

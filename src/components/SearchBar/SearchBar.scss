@@ -1,5 +1,6 @@
 .search-container {
   display: flex;
+  z-index: 10;
 
   .searchbar-input {
     color: #fff;

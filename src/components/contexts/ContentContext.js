@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { getRandomNumber, requests } from '../helper/helper';
+import { requests } from '../helper/helper';
 
 const ContentContext = React.createContext();
 

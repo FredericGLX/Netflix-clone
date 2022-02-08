@@ -1,6 +1,9 @@
 export const bannerFade = {
   hidden: {
     opacity: 0,
+    transition: {
+      duration: 5,
+    },
   },
   visible: {
     opacity: 1,
@@ -8,6 +11,12 @@ export const bannerFade = {
       duration: 0.8,
     },
   },
+  // exit: {
+  //   opacity: 0,
+  //   transition: {
+  //     duration: 5,
+  //   },
+  // },
 };
 
 export const bannerTitle = {
@@ -84,6 +93,18 @@ export const movieFade = {
     opacity: 1,
     transition: {
       duration: 0.6,
+    },
+  },
+};
+
+export const searchPageFade = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
     },
   },
 };
