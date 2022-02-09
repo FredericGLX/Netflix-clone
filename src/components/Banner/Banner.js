@@ -21,6 +21,7 @@ const Banner = () => {
         animate="visible"
         exit="hidden"
       >
+        <div className="banner-top-fade"></div>
         <img
           className="banner-image"
           src={image_url + trendingNowData[num].poster_path}
