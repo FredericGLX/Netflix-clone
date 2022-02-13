@@ -1,10 +1,13 @@
 import Modal from './Modal';
 import { BsPlayFill, BsPlusCircle } from 'react-icons/bs';
-import { useState } from 'react';
+import { AiOutlineMinusCircle } from 'react-icons/ai';
+import { useState, useEffect } from 'react';
 import { image_url, capitalizeFirstLetter } from '../helper/helper';
 import { genres as listGenres } from '../helper/list_genres';
 import useClickOutside from '../../hooks/useClickOutside';
 import netflixLogo from '../Search/img/netflix_alt_logo.jpeg';
+import { handleWatchlist } from '../helper/helper';
+import { icons } from 'react-icons/lib';
 
 const ModalBtn = ({
   children,
@@ -15,18 +18,20 @@ const ModalBtn = ({
   genres,
   vote,
   image,
+  objectData,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const genreArray = [];
+  const [iconSign, setIconSign] = useState(false);
 
   const handleCloseModal = () => {
     setIsOpen(false);
   };
   const handleOpenModel = () => {
+    checkIfInWatchlist(objectData);
     setIsOpen(true);
   };
 
-  // Passes as a Ref to Modal.js to close on outside click
   let domNode = useClickOutside(() => {
     setIsOpen(false);
   });
@@ -36,6 +41,19 @@ const ModalBtn = ({
     if (genres.includes(value)) genreArray.push(key);
     return genreArray.toString();
   });
+
+  const checkIfInWatchlist = (objectData) => {
+    let storageArray = JSON.parse(localStorage.getItem('currentWatchlist'));
+    if (!storageArray) {
+      setIconSign(false);
+    }
+    if (storageArray) {
+      let existingItem = storageArray.find((item) => item.id === objectData.id);
+      if (existingItem) {
+        setIconSign(true);
+      }
+    }
+  };
 
   return (
     <>
@@ -54,10 +72,19 @@ const ModalBtn = ({
               Play
             </button>
             <div className="watchlist-icon">
-              <BsPlusCircle
-                size="3rem"
-                style={{ stroke: '#000', strokeWidth: '0.1' }}
-              />
+              {!iconSign ? (
+                <BsPlusCircle
+                  size="3rem"
+                  style={{ stroke: '#000', strokeWidth: '0.1' }}
+                  onClick={() => handleWatchlist(objectData)}
+                />
+              ) : (
+                <AiOutlineMinusCircle
+                  size="3rem"
+                  style={{ stroke: '#000', strokeWidth: '0.1' }}
+                  onClick={() => handleWatchlist(objectData)}
+                />
+              )}
             </div>
           </div>
           <div className="modal-bottom-fade"></div>

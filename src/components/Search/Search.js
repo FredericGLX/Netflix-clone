@@ -39,6 +39,7 @@ const Search = () => {
                     language={item.original_language}
                     date={item.release_date}
                     vote={item.vote_average}
+                    watchlist={item}
                   >
                     <img
                       className="search-results-img"

@@ -58,6 +58,7 @@ const Banner = () => {
               language={trendingNowData[num].original_language}
               date={trendingNowData[num].release_date}
               vote={trendingNowData[num].vote_average}
+              objectData={trendingNowData[num]}
             >
               <button className="banner-info-btn">
                 <BiInfoCircle size="2rem" className="btn-logo" />

@@ -25,6 +25,7 @@ const Movie = (props) => {
             language={item.original_language}
             date={item.release_date}
             vote={item.vote_average}
+            objectData={item}
           >
             <img
               className="slide-img"

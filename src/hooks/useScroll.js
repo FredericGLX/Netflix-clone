@@ -6,7 +6,7 @@ const useScroll = (windowHeight) => {
   useEffect(() => {
     const checkScroll = () => {
       window.scrollY > windowHeight
-        ? setIsScrolled(true) && console.log('heyyyy')
+        ? setIsScrolled(true)
         : setIsScrolled(false);
     };
 
