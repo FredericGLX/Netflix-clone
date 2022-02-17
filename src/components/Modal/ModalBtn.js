@@ -2,12 +2,12 @@ import Modal from './Modal';
 import { BsPlayFill, BsPlusCircle } from 'react-icons/bs';
 import { AiOutlineMinusCircle } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
-import { image_url, capitalizeFirstLetter } from '../helper/helper';
+import { capitalizeFirstLetter } from '../helper/helper';
+import { image_url } from '../helper/requests';
 import { genres as listGenres } from '../helper/list_genres';
 import useClickOutside from '../../hooks/useClickOutside';
 import netflixLogo from '../Search/img/netflix_alt_logo.jpeg';
 import { handleWatchlist } from '../helper/helper';
-import { icons } from 'react-icons/lib';
 
 const ModalBtn = ({
   children,
@@ -21,8 +21,8 @@ const ModalBtn = ({
   objectData,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const genreArray = [];
   const [iconSign, setIconSign] = useState(false);
+  const genreArray = [];
 
   const handleCloseModal = () => {
     setIsOpen(false);
@@ -55,6 +55,12 @@ const ModalBtn = ({
     }
   };
 
+  const handleClick = () => {
+    handleWatchlist(objectData);
+    if (!iconSign) setIconSign(true);
+    if (iconSign) setIconSign(false);
+  };
+
   return (
     <>
       <div onClick={handleOpenModel}>{children}</div>
@@ -76,13 +82,13 @@ const ModalBtn = ({
                 <BsPlusCircle
                   size="3rem"
                   style={{ stroke: '#000', strokeWidth: '0.1' }}
-                  onClick={() => handleWatchlist(objectData)}
+                  onClick={() => handleClick()}
                 />
               ) : (
                 <AiOutlineMinusCircle
-                  size="3rem"
+                  size="3.1rem"
                   style={{ stroke: '#000', strokeWidth: '0.1' }}
-                  onClick={() => handleWatchlist(objectData)}
+                  onClick={() => handleClick()}
                 />
               )}
             </div>

@@ -18,9 +18,9 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { searchHandler } = useContext(SearchContext);
 
-  const handleClickLogo = () => {
+  const handleClickNavigation = (route) => {
     searchHandler('');
-    navigate('/homepage');
+    navigate(route);
   };
 
   const handleAvatarClick = () => {
@@ -47,7 +47,7 @@ const Navbar = () => {
         className="navbar-logo"
         src={logo}
         alt="netflix-logo"
-        onClick={handleClickLogo}
+        onClick={() => handleClickNavigation('/homepage')}
       />
 
       <div className="navbar-right" ref={domNode}>
@@ -72,9 +72,9 @@ const Navbar = () => {
           isMenuScrolled && 'navbar-browse-disabled'
         }`}
       >
-        <Link to="">TV Shows</Link>
-        <Link to="">Movies</Link>
-        <Link to="/mylist">My List</Link>
+        <a onClick={() => handleClickNavigation('/tvshows')}>TV Shows</a>
+        <a onClick={() => handleClickNavigation('/movies')}>Movies</a>
+        <a onClick={() => handleClickNavigation('/mylist')}>My List</a>
       </div>
     </div>
   );

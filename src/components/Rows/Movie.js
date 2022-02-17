@@ -1,7 +1,6 @@
-import { image_url } from '../helper/helper';
+import { image_url } from '../helper/requests';
 import './Rows.scss';
 import '../Modal/ModalBtn';
-
 // Swiper
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
@@ -19,7 +18,7 @@ const Movie = (props) => {
         <SwiperSlide className="swiper-slide" key={`slide-${index}`}>
           <ModalBtn
             image={item.backdrop_path}
-            title={item.title}
+            title={item.title || item.name}
             description={item.overview}
             genres={item.genre_ids}
             language={item.original_language}

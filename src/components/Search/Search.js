@@ -4,7 +4,7 @@ import './Search.scss';
 import { SearchContext } from '../contexts/SearchContext';
 import { capitalizeFirstLetter } from '../helper/helper';
 import ModalBtn from '../Modal/ModalBtn';
-import { image_url } from '../helper/helper';
+import { image_url } from '../helper/requests';
 import netflixLogo from './img/netflix_alt_logo.jpeg';
 import { motion } from 'framer-motion';
 import { searchPageFade } from '../helper/motionHelper';
@@ -39,7 +39,7 @@ const Search = () => {
                     language={item.original_language}
                     date={item.release_date}
                     vote={item.vote_average}
-                    watchlist={item}
+                    objectData={item}
                   >
                     <img
                       className="search-results-img"

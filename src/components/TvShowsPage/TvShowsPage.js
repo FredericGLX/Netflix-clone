@@ -1,23 +1,22 @@
 import { useContext } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Banner from '../Banner/Banner';
-import RowsMovies from '../Rows/RowsMovies';
+import RowsTvShows from '../Rows/RowsTvShows';
 import { SearchContext } from '../contexts/SearchContext';
 import { ContentContext } from '../contexts/ContentContext';
-import { getRandomNumber } from '../helper/helper';
 import Search from '../Search/Search';
 
-const Homepage = () => {
+const TvShowsPage = () => {
   const { query } = useContext(SearchContext);
-  const { trendingNowData } = useContext(ContentContext);
+  const { trendingTvShows } = useContext(ContentContext);
 
   return (
     <div className="homepage-container">
       <Navbar />
       {query === '' ? (
         <>
-          <Banner content={trendingNowData} />
-          <RowsMovies />
+          <Banner content={trendingTvShows} />
+          <RowsTvShows />
         </>
       ) : (
         <Search />
@@ -26,4 +25,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default TvShowsPage;

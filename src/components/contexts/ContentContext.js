@@ -1,71 +1,137 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { requests } from '../helper/helper';
+import { requests } from '../helper/requests';
 
-const ContentContext = React.createContext();
-
-export function useContentData() {
-  return useContext(ContentContext);
-}
+export const ContentContext = React.createContext();
 
 export function ContentProvider({ children }) {
   const [trendingNowData, setTrendingNowData] = useState({});
-  const [popularData, setPopularData] = useState({});
-  const [comedyData, setComedyData] = useState({});
-  const [horrorData, setHorrorData] = useState({});
-  const [documentaryData, setDocumentaryData] = useState({});
-  const [animationData, setAnimationData] = useState({});
-  const [scifiData, setScifiData] = useState({});
+  // Movies
+  const [moviesPopularData, setMoviesPopularData] = useState({});
+  const [trendingMovies, setTrendingMovies] = useState({});
+  const [moviesComedyData, setMoviesComedyData] = useState({});
+  const [moviesHorrorData, setMoviesHorrorData] = useState({});
+  const [moviesDocumentaryData, setMoviesDocumentaryData] = useState({});
+  const [moviesAnimationData, setMoviesAnimationData] = useState({});
+  const [moviesScifiData, setMoviesScifiData] = useState({});
+  // TV Shows
+  const [trendingTvShows, setTrendingTvShows] = useState({});
+  const [tvShowsPopularData, setTvShowsPopularData] = useState({});
+  const [tvShowsComedyData, setTvShowsComedyData] = useState({});
+  const [tvShowsMysteryData, setTvShowsMysteryData] = useState({});
+  const [tvShowsCrimeData, setTvShowsCrimeData] = useState({});
+  const [tvShowsAnimationData, setTvShowsAnimationData] = useState({});
+  const [tvShowsMusicData, setTvShowsMusicData] = useState({});
 
-  // Get data for homepage banner + Trending Now row
   const fetchTrendingNow = async () => {
     const { data } = await axios.get(requests.fetchTrending);
     setTrendingNowData(data.results);
   };
 
-  const fetchPopular = async () => {
-    const { data } = await axios.get(requests.popular);
-    setPopularData(data.results);
+  // MOVIES
+  const fetchTrendingMovies = async () => {
+    const { data } = await axios.get(requests.trending_movies);
+    setTrendingMovies(data.results);
   };
-  const fetchComedy = async () => {
-    const { data } = await axios.get(requests.comedy);
-    setComedyData(data.results);
+  const fetchMoviesPopular = async () => {
+    const { data } = await axios.get(requests.movies_popular);
+    setMoviesPopularData(data.results);
   };
-  const fetchHorror = async () => {
-    const { data } = await axios.get(requests.horror);
-    setHorrorData(data.results);
+  const fetchMoviesComedy = async () => {
+    const { data } = await axios.get(requests.movies_comedy);
+    setMoviesComedyData(data.results);
   };
-  const fetchAnimation = async () => {
-    const { data } = await axios.get(requests.animation);
-    setAnimationData(data.results);
+  const fetchMoviesHorror = async () => {
+    const { data } = await axios.get(requests.movies_horror);
+    setMoviesHorrorData(data.results);
   };
-  const fetchScifi = async () => {
-    const { data } = await axios.get(requests.sci_fi);
-    setScifiData(data.results);
+  const fetchMoviesAnimation = async () => {
+    const { data } = await axios.get(requests.movies_animation);
+    setMoviesAnimationData(data.results);
   };
-  const fetchDocumentary = async () => {
-    const { data } = await axios.get(requests.documentary);
-    setDocumentaryData(data.results);
+  const fetchMoviesScifi = async () => {
+    const { data } = await axios.get(requests.movies_sci_fi);
+    setMoviesScifiData(data.results);
+  };
+  const fetchMoviesDocumentary = async () => {
+    const { data } = await axios.get(requests.movies_documentary);
+    setMoviesDocumentaryData(data.results);
+  };
+
+  const fetchAllMovies = () => {
+    fetchTrendingNow();
+    fetchTrendingMovies();
+    fetchMoviesPopular();
+    fetchMoviesComedy();
+    fetchMoviesHorror();
+    fetchMoviesDocumentary();
+    fetchMoviesAnimation();
+    fetchMoviesScifi();
+  };
+
+  // TV SHOWS
+  const fetchTrendingTvShows = async () => {
+    const { data } = await axios.get(requests.trending_series);
+    setTrendingTvShows(data.results);
+  };
+  const fetchTvShowsPopular = async () => {
+    const { data } = await axios.get(requests.series_popular);
+    setTvShowsPopularData(data.results);
+  };
+  const fetchTvShowsComedy = async () => {
+    const { data } = await axios.get(requests.series_comedy);
+    setTvShowsComedyData(data.results);
+  };
+  const fetchTvShowsMystery = async () => {
+    const { data } = await axios.get(requests.series_mystery);
+    setTvShowsMysteryData(data.results);
+  };
+  const fetchTvShowsAnimation = async () => {
+    const { data } = await axios.get(requests.series_animation);
+    setTvShowsAnimationData(data.results);
+  };
+  const fetchTvShowsMusic = async () => {
+    const { data } = await axios.get(requests.series_music);
+    setTvShowsMusicData(data.results);
+  };
+  const fetchTvShowsCrime = async () => {
+    const { data } = await axios.get(requests.series_crime);
+    setTvShowsCrimeData(data.results);
+  };
+
+  const fetchAllSeries = () => {
+    fetchTrendingTvShows();
+    // fetchTvShowsPopular();
+    fetchTvShowsComedy();
+    fetchTvShowsMystery();
+    fetchTvShowsCrime();
+    fetchTvShowsAnimation();
+    fetchTvShowsMusic();
   };
 
   useEffect(() => {
-    fetchTrendingNow();
-    fetchPopular();
-    fetchComedy();
-    fetchHorror();
-    fetchDocumentary();
-    fetchAnimation();
-    fetchScifi();
+    fetchAllMovies();
+    fetchAllSeries();
   }, []);
 
   const value = {
+    // Movies
     trendingNowData,
-    popularData,
-    comedyData,
-    horrorData,
-    documentaryData,
-    animationData,
-    scifiData,
+    trendingTvShows,
+    trendingMovies,
+    moviesPopularData,
+    moviesComedyData,
+    moviesHorrorData,
+    moviesDocumentaryData,
+    moviesAnimationData,
+    moviesScifiData,
+    // TV Shows
+    tvShowsComedyData,
+    trendingTvShows,
+    tvShowsMysteryData,
+    tvShowsMusicData,
+    tvShowsAnimationData,
+    tvShowsCrimeData,
   };
 
   return (
