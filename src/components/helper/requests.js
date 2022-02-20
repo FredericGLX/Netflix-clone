@@ -2,7 +2,7 @@ import { genres } from './list_genres';
 
 const API_KEY = 'api_key=' + process.env.REACT_APP_API_KEY;
 const base_url = 'https://api.themoviedb.org/3';
-export const image_url = 'https://image.tmdb.org/t/p/w500/';
+export const image_url = 'https://image.tmdb.org/t/p/original/';
 
 export const requests = {
   // MOVIES

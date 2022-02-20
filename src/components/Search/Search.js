@@ -22,7 +22,7 @@ const Search = () => {
         animate="visible"
         exit="hidden"
       >
-        <div>
+        <div className="search-title-results">
           <h1 className="search-title">
             Search results for:{' '}
             {query.length > 0 ? capitalizeFirstLetter(query) : ''}

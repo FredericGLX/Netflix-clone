@@ -4,7 +4,6 @@ import Banner from '../Banner/Banner';
 import RowsMovies from '../Rows/RowsMovies';
 import { SearchContext } from '../contexts/SearchContext';
 import { ContentContext } from '../contexts/ContentContext';
-import { getRandomNumber } from '../helper/helper';
 import Search from '../Search/Search';
 
 const Homepage = () => {

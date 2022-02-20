@@ -1,16 +1,29 @@
+@import '../../scss/mixin';
+
 .search-container {
   color: #fff;
 
+  .search-title-results {
+    margin-top: 20vh;
+    margin: 20vh 5px 0 5px;
+  }
+
   .search-title {
     font-size: 2.2rem;
-    margin: 10.5rem 0 1rem 1.8rem;
     font-weight: 600;
+    margin-bottom: 2rem;
+
+    @include respond(medium) {
+      font-size: 2.4rem;
+    }
+    @include respond(xlarge) {
+      font-size: 2.6rem;
+    }
   }
 
   .search-results {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
   }
 
@@ -20,8 +33,15 @@
     border-radius: 5px;
     transition: ease 0.3s all;
 
+    @include respond(medium) {
+      width: 20rem;
+    }
+    @include respond(xlarge) {
+      width: 24rem;
+    }
+
     &:hover {
-      transform: scale(1.3);
+      transform: scale(1.2);
       z-index: 5;
     }
   }

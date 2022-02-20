@@ -1,3 +1,5 @@
+@import '../../scss/mixin';
+
 .banner-container {
   position: relative;
   margin-bottom: -5px;
@@ -33,6 +35,10 @@
     background-color: transparent;
     background-image: linear-gradient(to bottom, transparent, #000);
   }
+
+  @include respond(large) {
+    height: 85vh;
+  }
 }
 
 .banner-content {
@@ -44,9 +50,19 @@
   width: 80%;
 
   .banner-title {
-    font-size: 3rem;
+    font-size: 3.6rem;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     line-height: 1;
+
+    @include respond(small) {
+      font-size: 4rem;
+    }
+    @include respond(medium) {
+      font-size: 5rem;
+    }
+    @include respond(large) {
+      font-size: 5.5rem;
+    }
   }
 
   .banner-buttons {
@@ -72,6 +88,11 @@
     .btn-logo {
       margin-right: 5px;
     }
+
+    @include respond(small) {
+      padding: 1rem 2rem;
+      font-size: 1.6rem;
+    }
   }
 
   .banner-play-btn {
@@ -94,5 +115,20 @@
     line-height: 1.6;
     font-weight: 500;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  }
+
+  @include respond(large) {
+    top: 60%;
+    left: 30%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+    width: 50%;
+
+    .banner-content-description {
+      max-width: 30vw;
+      font-size: 1.6rem;
+    }
   }
 }

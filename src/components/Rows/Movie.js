@@ -1,6 +1,9 @@
 import { image_url } from '../helper/requests';
+import { useEffect } from 'react';
 import './Rows.scss';
 import '../Modal/ModalBtn';
+import { genres as listGenres } from '../helper/list_genres';
+
 // Swiper
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
@@ -11,6 +14,34 @@ import ModalBtn from '../Modal/ModalBtn';
 
 const Movie = (props) => {
   const slides = [];
+
+  const customBreakpoints = {
+    breakpoints: {
+      1366: {
+        slidesPerView: 6,
+        slidesPerGroup: 6,
+      },
+      998: {
+        slidesPerView: 5,
+        slidesPerGroup: 5,
+      },
+      650: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+      },
+      500: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+      350: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      200: {
+        slidesPerView: 1.5,
+      },
+    },
+  };
 
   props.movies.length > 0 &&
     props.movies.map((item, index) => {
@@ -43,12 +74,11 @@ const Movie = (props) => {
       <div className="title-pagination">
         <h1>{props.rowTitle}</h1>
         <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={0}
-          slidesPerView={2}
-          slidesPerGroup={2}
           navigation
           pagination={{ clickable: true, el: '.custom-pagination-div' }}
+          spaceBetween={5}
+          {...customBreakpoints}
+          modules={[Navigation, Pagination]}
         >
           {slides}
           <span className="custom-pagination-div"></span>

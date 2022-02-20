@@ -1,3 +1,5 @@
+@import '../../scss/mixin';
+
 // Changes navigation arrows color
 :root {
   --swiper-navigation-color: #fff;
@@ -10,9 +12,9 @@
 }
 
 .rows-individual {
+  margin: 0 1rem;
   h1 {
     color: #fff;
-    margin-left: 1.5rem;
   }
 }
 
@@ -40,7 +42,6 @@
 
 .swiper-wrapper {
   margin: 1rem 0;
-  text-align: center;
 
   &:hover {
     .swiper-slide {
@@ -63,12 +64,17 @@
 
 .swiper-slide {
   transition: ease 0.3s all;
-  position: relative;
 
   .slide-img {
-    width: 16.5rem;
+    width: 100%;
+    height: 100%;
+
     border-radius: 4px;
   }
+}
+
+.movie-poster-hover {
+  color: #fff;
 }
 
 // PAGINATION
@@ -98,9 +104,3 @@
     }
   }
 }
-
-// // Hover icons
-// .hover-icons {
-//   color: #fff;
-//   // position: absolute;
-// }

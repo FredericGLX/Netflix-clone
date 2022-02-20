@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.scss';
 import logo from './img/netflix_logo.png';
 import avatar from './img/netflix-avatar.png';
@@ -72,9 +72,9 @@ const Navbar = () => {
           isMenuScrolled && 'navbar-browse-disabled'
         }`}
       >
-        <a onClick={() => handleClickNavigation('/tvshows')}>TV Shows</a>
-        <a onClick={() => handleClickNavigation('/movies')}>Movies</a>
-        <a onClick={() => handleClickNavigation('/mylist')}>My List</a>
+        <p onClick={() => handleClickNavigation('/tvshows')}>TV Shows</p>
+        <p onClick={() => handleClickNavigation('/movies')}>Movies</p>
+        <p onClick={() => handleClickNavigation('/mylist')}>My List</p>
       </div>
     </div>
   );

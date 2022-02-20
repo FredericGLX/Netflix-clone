@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { requests } from '../helper/requests';
 
@@ -16,7 +16,6 @@ export function ContentProvider({ children }) {
   const [moviesScifiData, setMoviesScifiData] = useState({});
   // TV Shows
   const [trendingTvShows, setTrendingTvShows] = useState({});
-  const [tvShowsPopularData, setTvShowsPopularData] = useState({});
   const [tvShowsComedyData, setTvShowsComedyData] = useState({});
   const [tvShowsMysteryData, setTvShowsMysteryData] = useState({});
   const [tvShowsCrimeData, setTvShowsCrimeData] = useState({});
@@ -58,25 +57,10 @@ export function ContentProvider({ children }) {
     setMoviesDocumentaryData(data.results);
   };
 
-  const fetchAllMovies = () => {
-    fetchTrendingNow();
-    fetchTrendingMovies();
-    fetchMoviesPopular();
-    fetchMoviesComedy();
-    fetchMoviesHorror();
-    fetchMoviesDocumentary();
-    fetchMoviesAnimation();
-    fetchMoviesScifi();
-  };
-
   // TV SHOWS
   const fetchTrendingTvShows = async () => {
     const { data } = await axios.get(requests.trending_series);
     setTrendingTvShows(data.results);
-  };
-  const fetchTvShowsPopular = async () => {
-    const { data } = await axios.get(requests.series_popular);
-    setTvShowsPopularData(data.results);
   };
   const fetchTvShowsComedy = async () => {
     const { data } = await axios.get(requests.series_comedy);
@@ -99,17 +83,27 @@ export function ContentProvider({ children }) {
     setTvShowsCrimeData(data.results);
   };
 
-  const fetchAllSeries = () => {
-    fetchTrendingTvShows();
-    // fetchTvShowsPopular();
-    fetchTvShowsComedy();
-    fetchTvShowsMystery();
-    fetchTvShowsCrime();
-    fetchTvShowsAnimation();
-    fetchTvShowsMusic();
-  };
-
   useEffect(() => {
+    const fetchAllMovies = () => {
+      fetchTrendingNow();
+      fetchTrendingMovies();
+      fetchMoviesPopular();
+      fetchMoviesComedy();
+      fetchMoviesHorror();
+      fetchMoviesDocumentary();
+      fetchMoviesAnimation();
+      fetchMoviesScifi();
+    };
+
+    const fetchAllSeries = () => {
+      fetchTrendingTvShows();
+      fetchTvShowsComedy();
+      fetchTvShowsMystery();
+      fetchTvShowsCrime();
+      fetchTvShowsAnimation();
+      fetchTvShowsMusic();
+    };
+
     fetchAllMovies();
     fetchAllSeries();
   }, []);
@@ -117,7 +111,6 @@ export function ContentProvider({ children }) {
   const value = {
     // Movies
     trendingNowData,
-    trendingTvShows,
     trendingMovies,
     moviesPopularData,
     moviesComedyData,

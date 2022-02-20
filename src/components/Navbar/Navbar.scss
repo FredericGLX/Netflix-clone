@@ -1,3 +1,5 @@
+@import '../../scss/mixin';
+
 .navbar-container {
   position: fixed;
   top: 0;
@@ -9,7 +11,6 @@
   justify-content: flex-start;
   padding-right: 1rem;
   padding-bottom: 1.2rem;
-
   color: #fff;
   transition: all 0.3s ease-out;
 }
@@ -26,11 +27,10 @@
   width: 100%;
   transition: all 0.3s ease-out;
 
-  a {
-    text-decoration: none;
+  p {
     color: #fff;
     margin: 0 10px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 500;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     transition: all 0.1s;
@@ -38,6 +38,16 @@
 
     &:hover {
       color: #e50914;
+    }
+
+    @include respond(medium) {
+      font-size: 2rem;
+    }
+    @include respond(xlarge) {
+      font-size: 2.1rem;
+    }
+    @include respond(xlarge) {
+      font-size: 2.2rem;
     }
   }
 }
@@ -105,6 +115,17 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 500ms;
+
+  @include respond(medium) {
+    width: 9rem;
+    font-size: 1.3rem;
+  }
+
+  @include respond(large) {
+    width: 10rem;
+    height: 3.25rem;
+    font-size: 1.5rem;
+  }
 }
 
 .profile-logout.show {

@@ -10,7 +10,6 @@ const RowsMovies = () => {
     moviesPopularData,
     moviesComedyData,
     moviesHorrorData,
-    moviesScifiData,
     moviesAnimationData,
   } = useContext(ContentContext);
 
@@ -24,7 +23,6 @@ const RowsMovies = () => {
     >
       <Movie movies={moviesPopularData} rowTitle={'Popular on Netflix'} />
       <Movie movies={moviesComedyData} rowTitle={'Comedy'} />
-      {/* <Movie movies={moviesScifiData} rowTitle={'Sci-Fi'} /> */}
       <Movie movies={trendingNowData} rowTitle={'Trending Now'} />
       <Movie movies={moviesAnimationData} rowTitle={'Animation'} />
       <Movie movies={moviesHorrorData} rowTitle={'Horror'} />

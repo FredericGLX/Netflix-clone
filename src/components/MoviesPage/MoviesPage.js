@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Banner from '../Banner/Banner';
 import RowsMovies from '../Rows/RowsMovies';

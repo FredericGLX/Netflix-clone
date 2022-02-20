@@ -22,7 +22,7 @@ const Banner = ({ content }) => {
         <div className="banner-top-fade"></div>
         <img
           className="banner-image"
-          src={image_url + content[num].poster_path}
+          src={image_url + content[num].backdrop_path}
           alt="main trending movie"
         />
         <motion.div className="banner-content">

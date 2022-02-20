@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import ModalBtn from '../Modal/ModalBtn';
 import { image_url } from '../helper/requests';
 import netflixLogo from '../Search/img/netflix_alt_logo.jpeg';

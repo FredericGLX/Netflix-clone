@@ -1,7 +1,7 @@
 import Modal from './Modal';
 import { BsPlayFill, BsPlusCircle } from 'react-icons/bs';
 import { AiOutlineMinusCircle } from 'react-icons/ai';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { capitalizeFirstLetter } from '../helper/helper';
 import { image_url } from '../helper/requests';
 import { genres as listGenres } from '../helper/list_genres';
