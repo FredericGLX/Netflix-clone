@@ -1,8 +1,7 @@
 import { image_url } from '../helper/requests';
-import { useEffect } from 'react';
-import './Rows.scss';
+import './Movie.scss';
 import '../Modal/ModalBtn';
-import { genres as listGenres } from '../helper/list_genres';
+import PosterInfo from '../PosterInfo/PosterInfo';
 
 // Swiper
 import { Navigation, Pagination } from 'swiper';
@@ -17,19 +16,15 @@ const Movie = (props) => {
 
   const customBreakpoints = {
     breakpoints: {
-      1366: {
+      1350: {
         slidesPerView: 6,
         slidesPerGroup: 6,
       },
-      998: {
-        slidesPerView: 5,
-        slidesPerGroup: 5,
-      },
-      650: {
+      990: {
         slidesPerView: 4,
         slidesPerGroup: 4,
       },
-      500: {
+      650: {
         slidesPerView: 3,
         slidesPerGroup: 3,
       },
@@ -43,10 +38,16 @@ const Movie = (props) => {
     },
   };
 
+  const getEdgeArrowsIndex = (index) => {
+    const i = index + 1;
+    if (i === 1) return 'disabled-arrow';
+    else if (i === 20) return 'disabled-arrow';
+  };
+
   props.movies.length > 0 &&
     props.movies.map((item, index) => {
       return slides.push(
-        <SwiperSlide className="swiper-slide" key={`slide-${index}`}>
+        <SwiperSlide key={`slide-${index}`}>
           <ModalBtn
             image={item.backdrop_path}
             title={item.title || item.name}
@@ -64,6 +65,10 @@ const Movie = (props) => {
               }
               alt={item.title}
             />
+            <PosterInfo
+              title={item.title || item.name}
+              genres={item.genre_ids}
+            />
           </ModalBtn>
         </SwiperSlide>
       );
@@ -71,7 +76,7 @@ const Movie = (props) => {
 
   return (
     <div className="rows-individual">
-      <div className="title-pagination">
+      <div className={`title-pagination `}>
         <h1>{props.rowTitle}</h1>
         <Swiper
           navigation

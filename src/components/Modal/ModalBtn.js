@@ -38,8 +38,8 @@ const ModalBtn = ({
 
   // Compare genres list with current movie genre and return matches
   Object.entries(listGenres).filter(([key, value]) => {
-    if (genres.includes(value)) genreArray.push(key);
-    return genreArray.toString();
+    if (genres.includes(value)) genreArray.push(capitalizeFirstLetter(key));
+    return genreArray;
   });
 
   const checkIfInWatchlist = (objectData) => {
@@ -105,8 +105,7 @@ const ModalBtn = ({
               About <span className="modal-info-title">{title}</span>
             </div>
             <p className="modal-p1">
-              Genres:{' '}
-              <span>{capitalizeFirstLetter(genreArray.join(', '))}</span>
+              Genres: <span>{genreArray.join(', ')}</span>
             </p>
             <p className="modal-p2">
               Release date: <span>{date}</span>

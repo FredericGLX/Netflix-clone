@@ -1,4 +1,4 @@
-import Movie from './Movie';
+import Movie from '../Movie/Movie';
 import { ContentContext } from '../contexts/ContentContext';
 import { motion } from 'framer-motion';
 import { movieFade } from '../helper/motionHelper';

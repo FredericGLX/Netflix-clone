@@ -33,7 +33,8 @@
     width: 50vw;
   }
   @include respond(xlarge) {
-    max-width: 65rem;
+    max-width: 60rem;
+    height: 94vh;
   }
 
   .modal-close-icon {
@@ -117,7 +118,7 @@
     margin: 1.4rem 0;
     font-size: 1.4rem;
     font-weight: 500;
-    line-height: 1.7;
+    line-height: 1.6;
     animation: moveInUp 0.7s ease-out;
   }
 

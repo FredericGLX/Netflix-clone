@@ -1,0 +1,206 @@
+@import '../../scss/mixin';
+
+.row-container {
+  // pa: 2rem 2rem;
+  background-color: #111;
+  overflow: hidden !important;
+}
+
+.rows-individual {
+  margin: 1rem 0;
+  h1 {
+    color: #fff;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  opacity: 0 !important;
+  transition: opacity 0.5s;
+  --swiper-navigation-color: #fff;
+}
+
+.swiper-button-disabled {
+  --swiper-navigation-color: rgba(153, 153, 153, 0.6);
+}
+
+.title-pagination {
+  padding: 0 3rem;
+  .swiper-button-prev {
+    @include respond(xsmall) {
+      left: -6%;
+    }
+    @include respond(small) {
+      left: -5%;
+    }
+    @include respond(medium) {
+      left: -2.5%;
+    }
+    @include respond(large) {
+      left: -2%;
+    }
+    @include respond(large) {
+      left: -1%;
+    }
+  }
+  .swiper-button-next {
+    @include respond(xsmall) {
+      right: -6%;
+    }
+    @include respond(small) {
+      right: -5%;
+    }
+    @include respond(medium) {
+      right: -2.5%;
+    }
+    @include respond(large) {
+      right: -2%;
+    }
+    @include respond(large) {
+      right: -1%;
+    }
+  }
+  &:hover {
+    .custom-pagination-div {
+      opacity: 1;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 1 !important;
+    }
+  }
+}
+
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-wrapper {
+  margin: 1rem 0;
+
+  &:hover {
+    .swiper-slide {
+      transform: translateX(-15%);
+      opacity: 0.5;
+
+      &:hover {
+        transform: scale(1.2);
+        opacity: 1;
+        z-index: 5;
+
+        ~ .swiper-slide {
+          transform: translateX(15%);
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+.poster-hover {
+  opacity: 0 !important;
+}
+
+.swiper-slide {
+  transition: ease 0.3s all;
+
+  // Check if child is left or right slide to not scale outside of screen when hovered
+  @include respond(xsmall) {
+    &:nth-child(1n) {
+      transform-origin: initial;
+    }
+    &:nth-child(2n + 1) {
+      transform-origin: left;
+    }
+    &:nth-child(2n + 2) {
+      transform-origin: right;
+    }
+  }
+
+  @include respond(small) {
+    &:nth-child(1n) {
+      transform-origin: initial;
+    }
+    &:nth-child(3n + 1) {
+      transform-origin: left;
+    }
+    &:nth-child(3n + 3) {
+      transform-origin: right;
+    }
+  }
+
+  @include respond(medium) {
+    &:nth-child(1n) {
+      transform-origin: initial;
+    }
+    &:nth-child(4n + 1) {
+      transform-origin: left;
+    }
+    &:nth-child(4n + 4) {
+      transform-origin: right;
+    }
+  }
+
+  @include respond(large) {
+    &:nth-child(1n) {
+      transform-origin: initial;
+    }
+    &:nth-child(5n + 1) {
+      transform-origin: left;
+    }
+    &:nth-child(5n + 5) {
+      transform-origin: right;
+    }
+  }
+
+  @include respond(xlarge) {
+    &:nth-child(1n) {
+      transform-origin: initial;
+    }
+    &:nth-child(6n + 1) {
+      transform-origin: left;
+    }
+    &:nth-child(6n + 6) {
+      transform-origin: right;
+    }
+  }
+
+  .slide-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    position: relative;
+  }
+}
+
+.movie-poster-hover {
+  color: #fff;
+}
+
+// PAGINATION
+.custom-pagination-div {
+  position: absolute;
+  top: -18px;
+  right: 4.5%;
+  left: initial !important;
+  bottom: initial !important;
+  width: auto !important;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.swiper-pagination {
+  &-bullet {
+    background-color: #c5acac !important;
+    border-radius: 0px !important;
+    opacity: 0.6 !important;
+    width: 12px !important;
+    height: 4px !important;
+    margin: 0 !important;
+    margin-left: 2px !important;
+
+    &-active {
+      opacity: 1 !important;
+    }
+  }
+}

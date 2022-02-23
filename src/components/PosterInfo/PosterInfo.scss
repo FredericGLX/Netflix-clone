@@ -1,0 +1,49 @@
+@import '../../scss/mixin';
+
+.movie-poster {
+  display: none;
+}
+
+@include respond(medium) {
+  .movie-poster {
+    display: block;
+    color: #fff;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    bottom: 12%;
+    padding-left: 1rem;
+    transform: translateY(18%);
+    opacity: 0;
+    transition: all 0.5s;
+
+    .poster-icons {
+      display: flex;
+      align-items: center;
+
+      .poster-icon {
+        margin-right: 5px;
+      }
+    }
+
+    .poster-text {
+      h3 {
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+      .poster-genres {
+        transform: translateY(50%);
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .swiper-slide {
+    &:hover {
+      .movie-poster {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
