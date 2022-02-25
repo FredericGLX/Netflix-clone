@@ -23,11 +23,14 @@ const RowsTvShows = () => {
       animate="visible"
       exit="hidden"
     >
-      {/* <Movie movies={popularData} rowTitle={'Popular on Netflix'} /> */}
       <Movie movies={tvShowsComedyData} rowTitle={'Comedy'} />
-      <Movie movies={trendingTvShows} rowTitle={'Trending Now'} />
-      <Movie movies={tvShowsCrimeData} rowTitle={'Crime'} />
       <Movie movies={tvShowsAnimationData} rowTitle={'Animation'} />
+      <Movie
+        movies={trendingTvShows}
+        rowTitle={'Trending Now'}
+        isVertical={true}
+      />
+      <Movie movies={tvShowsCrimeData} rowTitle={'Crime'} />
       <Movie movies={tvShowsMysteryData} rowTitle={'Mystery'} />
       <Movie movies={tvShowsMusicData} rowTitle={'Music'} />
     </motion.div>

@@ -8,8 +8,9 @@ import {
   watchlistHasResults,
   watchlistNoResults,
 } from '../helper/motionHelper';
+import PosterInfo from '../PosterInfo/PosterInfo';
 
-const Watchlist = () => {
+const MyList = () => {
   let [storageArray, setStorageArray] = useState([]);
   useEffect(() => {
     setStorageArray(JSON.parse(localStorage.getItem('currentWatchlist')));
@@ -29,29 +30,36 @@ const Watchlist = () => {
         {storageArray && storageArray.length > 0 ? (
           storageArray.map((item) => {
             return (
-              <ModalBtn
-                image={item.backdrop_path}
-                title={item.title}
-                description={item.overview}
-                genres={item.genre_ids}
-                language={item.original_language}
-                date={item.release_date}
-                vote={item.vote_average}
-                objectData={item}
-              >
-                <motion.img
-                  className="watchlist-img"
-                  src={
-                    item.backdrop_path
-                      ? image_url + item.backdrop_path
-                      : netflixLogo
-                  }
-                  alt={item.title}
-                  variants={watchlistHasResults}
-                  initial="hidden"
-                  animate="visible"
-                />
-              </ModalBtn>
+              <div className="mylist-cart">
+                <ModalBtn
+                  image={item.backdrop_path}
+                  title={item.title || item.name}
+                  description={item.overview}
+                  genres={item.genre_ids}
+                  language={item.original_language}
+                  date={item.release_date}
+                  vote={item.vote_average}
+                  objectData={item}
+                >
+                  <motion.img
+                    className="watchlist-img"
+                    src={
+                      item.backdrop_path
+                        ? image_url + item.backdrop_path
+                        : netflixLogo
+                    }
+                    alt={item.title}
+                    variants={watchlistHasResults}
+                    initial="hidden"
+                    animate="visible"
+                  />
+                  <PosterInfo
+                    title={item.title || item.name}
+                    genres={item.genre_ids}
+                    objectData={item}
+                  />
+                </ModalBtn>
+              </div>
             );
           })
         ) : (
@@ -69,4 +77,4 @@ const Watchlist = () => {
   );
 };
 
-export default Watchlist;
+export default MyList;

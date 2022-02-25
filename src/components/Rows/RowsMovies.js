@@ -23,7 +23,11 @@ const RowsMovies = () => {
     >
       <Movie movies={moviesPopularData} rowTitle={'Popular on Netflix'} />
       <Movie movies={moviesComedyData} rowTitle={'Comedy'} />
-      <Movie movies={trendingNowData} rowTitle={'Trending Now'} />
+      <Movie
+        movies={trendingNowData}
+        rowTitle={'Trending Now'}
+        isVertical={true}
+      />
       <Movie movies={moviesAnimationData} rowTitle={'Animation'} />
       <Movie movies={moviesHorrorData} rowTitle={'Horror'} />
     </motion.div>

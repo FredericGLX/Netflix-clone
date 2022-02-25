@@ -2,10 +2,10 @@
 
 .navbar-container {
   position: fixed;
-  top: 0;
+  padding-top: 10px;
   z-index: 10;
   width: 100%;
-  height: 70px;
+  height: 6rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -16,63 +16,43 @@
 }
 
 .navbar-active {
-  background-color: #000;
+  background-color: rgba(17, 17, 17, 0.7);
 }
 
-.navbar-browse {
+.navbar-left {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 10rem;
-  width: 100%;
-  transition: all 0.3s ease-out;
-
-  p {
-    color: #fff;
-    margin: 0 10px;
-    font-size: 1.8rem;
-    font-weight: 500;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    transition: all 0.1s;
+  .navbar-logo {
+    margin-left: 8px;
+    width: 10rem;
     cursor: pointer;
+  }
+  .navbar-links {
+    display: flex;
+    margin-left: 5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
 
-    &:hover {
-      color: #e50914;
+    .active-link {
+      font-weight: 600;
     }
 
-    @include respond(medium) {
-      font-size: 2rem;
-    }
-    @include respond(xlarge) {
-      font-size: 2.1rem;
-    }
-    @include respond(xlarge) {
-      font-size: 2.2rem;
+    p {
+      margin: 0 8px;
+      transition: all 0.1s;
+      &:hover {
+        color: #ccc;
+      }
     }
   }
 }
-.navbar-browse-disabled {
-  opacity: 0;
-  pointer-events: none;
-}
 
 .navbar-right {
-  position: absolute;
+  position: fixed;
   right: 5%;
   display: flex;
   align-items: center;
-  right: 10;
-}
-
-.navbar-logo {
-  position: absolute;
-  margin-left: 4px;
-  width: 8rem;
-  cursor: pointer;
-}
-
-.search-icon {
-  cursor: pointer;
 }
 
 .profile-section {
@@ -80,7 +60,6 @@
 
   .navbar-avatar {
     width: 2.8rem;
-    margin-left: 2rem;
     margin-right: 6px;
     border-radius: 1px;
   }
@@ -132,4 +111,37 @@
   opacity: 1;
   cursor: pointer;
   pointer-events: initial;
+}
+
+// For mobiles and small screen
+.navbar-browse {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+  width: 100%;
+  transition: all 0.3s ease-out;
+
+  .active-link {
+    font-weight: 600;
+  }
+
+  p {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s;
+    cursor: pointer;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
+}
+.navbar-browse-disabled {
+  opacity: 0;
+  pointer-events: none;
 }

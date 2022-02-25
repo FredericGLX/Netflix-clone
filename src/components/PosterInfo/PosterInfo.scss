@@ -1,49 +1,75 @@
 @import '../../scss/mixin';
 
-.movie-poster {
+.poster-cart {
   display: none;
 }
 
 @include respond(medium) {
-  .movie-poster {
+  .poster-cart {
     display: block;
     color: #fff;
     max-width: 100%;
     max-height: 100%;
     position: absolute;
-    bottom: 12%;
+    bottom: 14%;
     padding-left: 1rem;
     transform: translateY(18%);
     opacity: 0;
     transition: all 0.5s;
+  }
 
-    .poster-icons {
-      display: flex;
-      align-items: center;
-
-      .poster-icon {
-        margin-right: 5px;
-      }
+  .poster-text {
+    h3 {
+      margin-top: 5px;
+      font-size: 1.2rem;
     }
+    .poster-genres {
+      transform: translateY(50%);
+      font-size: 1rem;
+    }
+  }
 
-    .poster-text {
-      h3 {
-        margin-top: 5px;
-        font-size: 1.2rem;
-      }
-      .poster-genres {
-        transform: translateY(50%);
-        font-size: 1rem;
-      }
+  .poster-icons {
+    display: flex;
+    align-items: center;
+
+    .favourite-icon {
+      margin: 0 3px;
     }
   }
 
   .swiper-slide {
     &:hover {
-      .movie-poster {
+      .poster-cart {
         opacity: 1;
         transform: translateY(0);
       }
+    }
+  }
+}
+
+.search-cart {
+  position: relative;
+  transition: ease 0.3s all;
+  &:hover {
+    transform: scale(1.2);
+    z-index: 5;
+    .poster-cart {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.mylist-cart {
+  position: relative;
+  transition: ease 0.3s all;
+  &:hover {
+    transform: scale(1.2);
+    z-index: 5;
+    .poster-cart {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

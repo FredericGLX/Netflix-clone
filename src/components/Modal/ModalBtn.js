@@ -55,7 +55,7 @@ const ModalBtn = ({
     }
   };
 
-  const handleClick = () => {
+  const handleFavouriteClick = () => {
     handleWatchlist(objectData);
     if (!iconSign) setIconSign(true);
     if (iconSign) setIconSign(false);
@@ -82,13 +82,13 @@ const ModalBtn = ({
                 <BsPlusCircle
                   size="3rem"
                   style={{ stroke: '#000', strokeWidth: '0.1' }}
-                  onClick={() => handleClick()}
+                  onClick={() => handleFavouriteClick()}
                 />
               ) : (
                 <AiOutlineMinusCircle
                   size="3.1rem"
                   style={{ stroke: '#000', strokeWidth: '0.1' }}
-                  onClick={() => handleClick()}
+                  onClick={() => handleFavouriteClick()}
                 />
               )}
             </div>

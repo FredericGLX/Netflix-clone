@@ -9,19 +9,58 @@ import { AiOutlineCaretDown } from 'react-icons/ai';
 import useScroll from '../../hooks/useScroll';
 import useClickOutside from '../../hooks/useClickOutside';
 import { SearchContext } from '../contexts/SearchContext';
+import useWindowSize from '../../hooks/useWindowSize';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-  const isScrolled = useScroll(500);
+  const windowSize = useWindowSize();
+  const isScrolled = useScroll(150);
   const isMenuScrolled = useScroll(10);
   const [isAvatarClicked, setIsAvatarClicked] = useState(false);
   const { logout } = useAuth();
   const navigate = useNavigate();
-  const { searchHandler } = useContext(SearchContext);
+  const { searchHandler, query } = useContext(SearchContext);
+  const { pathname } = useLocation();
 
   const handleClickNavigation = (route) => {
     searchHandler('');
     navigate(route);
   };
+
+  const menuLinks = (
+    <>
+      {windowSize.width >= 650 ? (
+        <p
+          onClick={() => handleClickNavigation('/homepage')}
+          className={
+            pathname === '/homepage' && query === '' ? 'active-link' : ''
+          }
+        >
+          Home
+        </p>
+      ) : (
+        ''
+      )}
+      <p
+        onClick={() => handleClickNavigation('/tvshows')}
+        className={pathname === '/tvshows' && query === '' ? 'active-link' : ''}
+      >
+        TV Shows
+      </p>
+      <p
+        onClick={() => handleClickNavigation('/movies')}
+        className={pathname === '/movies' && query === '' ? 'active-link' : ''}
+      >
+        Movies
+      </p>
+      <p
+        onClick={() => handleClickNavigation('/mylist')}
+        className={pathname === '/mylist' && query === '' ? 'active-link' : ''}
+      >
+        My List
+      </p>
+    </>
+  );
 
   const handleAvatarClick = () => {
     if (isAvatarClicked === false) {
@@ -42,13 +81,20 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`navbar-container ${isScrolled && 'navbar-active'}`}>
-      <img
-        className="navbar-logo"
-        src={logo}
-        alt="netflix-logo"
-        onClick={() => handleClickNavigation('/homepage')}
-      />
+    <nav className={`navbar-container ${isScrolled ? 'navbar-active' : ''}`}>
+      <div className="navbar-left">
+        <img
+          className="navbar-logo"
+          src={logo}
+          alt="netflix-logo"
+          onClick={() => handleClickNavigation('/homepage')}
+        />
+        {windowSize.width >= 650 ? (
+          <div className="navbar-links">{menuLinks}</div>
+        ) : (
+          ''
+        )}
+      </div>
 
       <div className="navbar-right" ref={domNode}>
         <SearchBar />
@@ -67,16 +113,18 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div
-        className={`navbar-browse ${
-          isMenuScrolled && 'navbar-browse-disabled'
-        }`}
-      >
-        <p onClick={() => handleClickNavigation('/tvshows')}>TV Shows</p>
-        <p onClick={() => handleClickNavigation('/movies')}>Movies</p>
-        <p onClick={() => handleClickNavigation('/mylist')}>My List</p>
-      </div>
-    </div>
+      {windowSize.width < 650 ? (
+        <div
+          className={`navbar-browse ${
+            isMenuScrolled && 'navbar-browse-disabled'
+          }`}
+        >
+          {menuLinks}
+        </div>
+      ) : (
+        ''
+      )}
+    </nav>
   );
 };
 

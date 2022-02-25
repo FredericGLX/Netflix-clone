@@ -2,7 +2,6 @@ import { image_url } from '../helper/requests';
 import './Movie.scss';
 import '../Modal/ModalBtn';
 import PosterInfo from '../PosterInfo/PosterInfo';
-
 // Swiper
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
@@ -20,6 +19,10 @@ const Movie = (props) => {
         slidesPerView: 6,
         slidesPerGroup: 6,
       },
+      1130: {
+        slidesPerView: 5,
+        slidesPerGroup: 5,
+      },
       990: {
         slidesPerView: 4,
         slidesPerGroup: 4,
@@ -28,20 +31,14 @@ const Movie = (props) => {
         slidesPerView: 3,
         slidesPerGroup: 3,
       },
-      350: {
+      330: {
         slidesPerView: 2,
         slidesPerGroup: 2,
       },
-      200: {
+      0: {
         slidesPerView: 1.5,
       },
     },
-  };
-
-  const getEdgeArrowsIndex = (index) => {
-    const i = index + 1;
-    if (i === 1) return 'disabled-arrow';
-    else if (i === 20) return 'disabled-arrow';
   };
 
   props.movies.length > 0 &&
@@ -61,7 +58,10 @@ const Movie = (props) => {
             <img
               className="slide-img"
               src={
-                item.backdrop_path.length > 0 && image_url + item.backdrop_path
+                props.isVertical === undefined
+                  ? item.backdrop_path.length > 0 &&
+                    image_url + item.backdrop_path
+                  : item.poster_path.length > 0 && image_url + item.poster_path
               }
               alt={item.title}
             />

@@ -32,17 +32,16 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Search content"
-        className="searchbar-input"
+        className={`searchbar-input ${
+          isSearchBarOpen === true ? 'active' : ''
+        }`}
         ref={inputRef}
         onChange={handleChange}
         value={query}
       />
-      <BiSearch
-        className="search-icon"
-        size="2.5rem"
-        color="#fff"
-        onClick={handleClick}
-      />
+      <div onClick={handleClick}>
+        <BiSearch className="search-icon" size="2.5rem" color="#fff" />
+      </div>
     </div>
   );
 };
