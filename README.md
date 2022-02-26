@@ -8,9 +8,10 @@ I wanted to challenge myself by coding a clone of a popular web app. While brows
 
 ## Features
 - You can sign up by creating an account, or sign in using an account you created or your google account. 
-- Once logged in, you land on a homepage from where you can see one main movie/show that's different after every refresh, below are different rows of movies sorted by genre. When clicking on any of the thumbnail a modal window opens up to display more info about it, each content can be added to a favorite.
+- Once logged in, you land on a homepage from where you can see one main movie/show that's different after every refresh, below are different rows of movies sorted by genre. 
 - Different pages with different content
 - Each row has a navigation, you either navigate using the arrows or by clicking on the pagination icons on the top right corner of each rows.
+- When clicking on any of the thumbnail a modal window opens up to display more info about it, each content can be added to a favorite. Animation on opening and closing the window (can also be closed clicking outside the modal).
 - Search feature displaying result without reloading the page.
 
 ## Technologies used
