@@ -1,13 +1,12 @@
+import { useState } from 'react';
+import useClickOutside from '../../hooks/useClickOutside';
+import { capitalizeFirstLetter, handleWatchlist } from '../helper/helper';
 import Modal from './Modal';
 import { BsPlayFill, BsPlusCircle } from 'react-icons/bs';
 import { AiOutlineMinusCircle } from 'react-icons/ai';
-import { useState } from 'react';
-import { capitalizeFirstLetter } from '../helper/helper';
 import { image_url } from '../helper/requests';
 import { genres as listGenres } from '../helper/list_genres';
-import useClickOutside from '../../hooks/useClickOutside';
 import netflixLogo from '../Search/img/netflix_alt_logo.jpeg';
-import { handleWatchlist } from '../helper/helper';
 
 const ModalBtn = ({
   children,

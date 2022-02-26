@@ -1,16 +1,15 @@
-import { useState, useContext } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import './Navbar.scss';
 import logo from './img/netflix_logo.png';
 import avatar from './img/netflix-avatar.png';
-import SearchBar from '../SearchBar/SearchBar';
-import { AiOutlineCaretDown } from 'react-icons/ai';
+import { useState, useContext } from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import { useNavigate, useLocation } from 'react-router-dom';
 import useScroll from '../../hooks/useScroll';
 import useClickOutside from '../../hooks/useClickOutside';
-import { SearchContext } from '../contexts/SearchContext';
 import useWindowSize from '../../hooks/useWindowSize';
-import { useLocation } from 'react-router-dom';
+import SearchBar from '../SearchBar/SearchBar';
+import { SearchContext } from '../contexts/SearchContext';
+import { AiOutlineCaretDown } from 'react-icons/ai';
 
 const Navbar = () => {
   const windowSize = useWindowSize();

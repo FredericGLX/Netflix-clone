@@ -1,14 +1,14 @@
+import './Search.scss';
+import netflixLogo from './img/netflix_alt_logo.jpeg';
 import React, { useContext } from 'react';
 import Navbar from '../Navbar/Navbar';
-import './Search.scss';
+import ModalBtn from '../Modal/ModalBtn';
+import PosterInfo from '../PosterInfo/PosterInfo';
 import { SearchContext } from '../contexts/SearchContext';
 import { capitalizeFirstLetter } from '../helper/helper';
-import ModalBtn from '../Modal/ModalBtn';
 import { image_url } from '../helper/requests';
-import netflixLogo from './img/netflix_alt_logo.jpeg';
 import { motion } from 'framer-motion';
 import { searchPageFade } from '../helper/motionHelper';
-import PosterInfo from '../PosterInfo/PosterInfo';
 
 const Search = () => {
   const { searchContent, query } = useContext(SearchContext);

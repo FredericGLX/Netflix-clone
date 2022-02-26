@@ -1,9 +1,9 @@
+import { useAuth } from './contexts/AuthContext';
+import { Routes, Route } from 'react-router-dom';
 import LandingPage from './Landing_Page/LandingPage';
 import SignIn from './Sign/SignIn';
 import SignUp from './Sign/SignUp';
 import Homepage from './Homepage/Homepage';
-import { Routes, Route } from 'react-router-dom';
-import { useAuth } from './contexts/AuthContext';
 import PrivateRoute from './PrivateRoute';
 import TvShowsPage from './TvShowsPage/TvShowsPage';
 import MoviesPage from './MoviesPage/MoviesPage';

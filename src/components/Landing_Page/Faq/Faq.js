@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { accordionData } from './accordionData';
 import './Faq.scss';
+import { Link } from 'react-router-dom';
 
 const Faq = () => {
   const [clicked, setClicked] = useState(false);
@@ -41,18 +42,9 @@ const Faq = () => {
         Ready to watch Netflix? Enter your email to create or restart your
         membership.
       </p>
-
-      <div className="faq-email-form">
-        <div className="faq-field">
-          <input className="faq-input" type="text" required />
-          <label
-            className="faq-label-text"
-            for="email"
-            title="Email address"
-          ></label>
-        </div>
+      <Link to={'/signup'}>
         <button className="faq-btn-get-started">Get started</button>
-      </div>
+      </Link>
     </div>
   );
 };

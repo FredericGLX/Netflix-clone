@@ -1,8 +1,8 @@
-import { useState, useRef, useContext } from 'react';
-import { BiSearch } from 'react-icons/bi';
 import './SearchBar.scss';
+import { useState, useRef, useContext } from 'react';
 import useClickOutside from '../../hooks/useClickOutside';
 import { SearchContext } from '../contexts/SearchContext';
+import { BiSearch } from 'react-icons/bi';
 
 const SearchBar = () => {
   const inputRef = useRef();
@@ -28,7 +28,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="search-container" ref={domNode}>
+    <div className="searchbar-container" ref={domNode}>
       <input
         type="text"
         placeholder="Search content"

@@ -1,14 +1,13 @@
-import { image_url } from '../helper/requests';
 import './Movie.scss';
-import '../Modal/ModalBtn';
+import ModalBtn from '../Modal/ModalBtn';
 import PosterInfo from '../PosterInfo/PosterInfo';
+import { image_url } from '../helper/requests';
 // Swiper
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import 'swiper/swiper.scss';
 import 'swiper/modules/navigation/navigation.scss';
 import 'swiper/modules/pagination/pagination.scss';
-import ModalBtn from '../Modal/ModalBtn';
 
 const Movie = (props) => {
   const slides = [];

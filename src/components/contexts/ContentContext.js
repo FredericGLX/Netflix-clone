@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { requests } from '../helper/requests';
+import axios from 'axios';
 
 export const ContentContext = React.createContext();
 

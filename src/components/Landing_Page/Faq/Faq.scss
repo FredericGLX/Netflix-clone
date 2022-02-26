@@ -1,14 +1,17 @@
+@import '../../../scss/mixin';
+
 .faq-container {
   background-color: #000;
   color: #fff;
   text-align: center;
   border-top: 0.8rem solid #222;
+  padding: 0 6vw;
 }
 
 .faq-main-title {
   font-size: 2.6rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin: 2rem 0 1rem 0;
 }
 
 .faq-subtitle {
@@ -30,19 +33,20 @@
   margin-top: 1rem;
   margin-bottom: 5rem;
   background-color: #e50914;
+  border-radius: 3px;
   border: none;
   color: #fff;
 }
 
 // Accordion component
 .accordion {
-  width: 100vw;
+  width: 100%;
   background-color: #444;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2rem;
+  padding: 1rem;
   font-size: 1.8rem;
   border: none;
   border-top: 1rem solid #000;
@@ -60,53 +64,7 @@
   overflow: hidden;
 }
 
-// email input field + animation
-.faq-field {
-  position: relative;
-
-  label::before {
-    content: attr(title);
-    position: absolute;
-    top: 1.2rem;
-    left: 1rem;
-    color: #777;
-    font-size: 1.2rem;
-    transition: 0.1s all;
-  }
-
-  .faq-input {
-    padding-left: 0.8rem;
-    width: 90vw;
-    border: none;
-    font-size: 1.2rem;
-    color: #111;
-    height: 4rem;
-
-    &:focus,
-    &:valid {
-      outline: none;
-      padding-top: 1rem;
-    }
-
-    &:valid + label::before,
-    &:focus + label::before {
-      @extend .text-animation;
-    }
-  }
-}
-
-.text-animation {
-  font-size: 1rem;
-  top: 2px;
-  left: 0.3px;
-  font-weight: 700;
-  padding: 0 6px;
-}
-
-// ***** RESPONSIVE *****
-
-/* 768px display */
-@media (min-width: 48rem) {
+@include respond(medium) {
   .accordion-container {
     display: flex;
     align-items: center;
@@ -115,8 +73,8 @@
   }
   .accordion,
   .panel {
-    width: 85vw;
-    font-size: 2rem;
+    width: 65vw;
+    font-size: 1.8rem;
   }
 
   .faq-field {
@@ -131,28 +89,34 @@
   }
 }
 
-/* 1024px display */
-@media (min-width: 64rem) {
+@include respond(large) {
   .faq-main-title {
-    font-size: 5rem;
+    font-size: 3.6rem;
     padding-top: 4rem;
     padding-bottom: 1rem;
   }
-  .accordion {
-    font-size: 2.6rem;
-  }
-  .accordion,
-  .panel {
-    width: 70vw;
-    font-size: 2.6rem;
-    padding-left: 3rem;
-  }
+
   .accordion {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+  .accordion,
+  .panel {
+    width: 60vw;
+    font-size: 2rem;
+    padding-left: 3rem;
+  }
   .panel {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+}
+
+@include respond(xlarge) {
+  .accordion,
+  .panel {
+    width: 55vw;
+    font-size: 2rem;
+    padding-left: 3rem;
   }
 }

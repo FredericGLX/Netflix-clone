@@ -27,7 +27,6 @@ export const requests = {
     base_url + '/discover/tv?' + API_KEY + `&with_genres=${genres.sci_fi}`,
   // TV SHOWS
   trending_series: base_url + '/trending/tv/day?' + API_KEY,
-  // series: base_url + '/tv/popular?' + API_KEY,
   series_comedy:
     base_url + '/discover/tv?' + API_KEY + `&with_genres=${genres.comedy}`,
   series_mystery:

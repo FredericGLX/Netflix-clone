@@ -1,7 +1,4 @@
 import './PosterInfo.scss';
-import { useLocation } from 'react-router-dom';
-// import { BsPlusCircle } from 'react-icons/bs';
-// import { AiOutlineMinusCircle } from 'react-icons/ai';
 import { IoIosPlayCircle } from 'react-icons/io';
 import { IoChevronDownCircleOutline } from 'react-icons/io5';
 import { genres as listGenres } from '../helper/list_genres';

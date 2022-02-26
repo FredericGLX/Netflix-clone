@@ -15,26 +15,26 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
-export function AuthProvider({ children }) {
+export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  function register(email, password) {
+  const register = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
-  }
+  };
 
-  function login(email, password) {
+  const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
-  }
+  };
 
-  function signInWithGoogle() {
+  const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider);
-  }
+  };
 
-  function logout() {
+  const logout = () => {
     return signOut(auth);
-  }
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -52,4 +52,4 @@ export function AuthProvider({ children }) {
       {!loading && children}
     </AuthContext.Provider>
   );
-}
+};

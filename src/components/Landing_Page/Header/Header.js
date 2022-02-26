@@ -7,7 +7,7 @@ const Header = () => {
     <div className="header-main-container">
       <header className="header">
         <Link to="/">
-          <img className="logo" src={logo} alt="netflix logo" />
+          <img className="header-logo" src={logo} alt="netflix logo" />
         </Link>
         <Link to="/login">
           <button className="btn-sign-in">Sign in</button>
@@ -27,17 +27,9 @@ const Header = () => {
               membership.
             </p>
           </div>
-          <div className="email-form">
-            <div className="field">
-              <input type="text" name="email" required />
-              <label
-                className="label-text"
-                for="email"
-                title="Email address"
-              ></label>
-            </div>
+          <Link to={'/signup'}>
             <button className="btn-get-started">Get started</button>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

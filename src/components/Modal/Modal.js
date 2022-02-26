@@ -1,5 +1,5 @@
-import ReactDom from 'react-dom';
 import './Modal.scss';
+import ReactDom from 'react-dom';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { motion, AnimatePresence } from 'framer-motion';
 import { modalPopUp, basicFade } from '../helper/motionHelper';

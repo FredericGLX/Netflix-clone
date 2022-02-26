@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import Navbar from '../Navbar/Navbar';
-import Banner from '../Banner/Banner';
-import RowsTvShows from '../Rows/RowsTvShows';
 import { SearchContext } from '../contexts/SearchContext';
 import { ContentContext } from '../contexts/ContentContext';
+import Navbar from '../Navbar/Navbar';
 import Search from '../Search/Search';
+import Banner from '../Banner/Banner';
+import RowsTvShows from '../Rows/RowsTvShows';
 
 const TvShowsPage = () => {
   const { query } = useContext(SearchContext);

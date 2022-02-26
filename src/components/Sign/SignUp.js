@@ -45,22 +45,14 @@ const SignUp = () => {
 
         <form className="sign-form" onSubmit={handleSubmit}>
           {error && alert(error)}
-          {/* Name */}
           <div className="sign-field">
-            <input type="text" />
-            <label className="sign-label-text" title="Your name"></label>
-          </div>
-          {/* Email */}
-          <div className="sign-field">
-            <input type="email" ref={emailRef} autoComplete="email" required />
+            <input type="text" ref={emailRef} autoComplete="email" required />
             <label className="sign-label-text" title="Email"></label>
           </div>
-          {/* Password */}
           <div className="sign-field">
             <input type="password" ref={passwordRef} required />
             <label className="sign-label-text" title="Password"></label>
           </div>
-          {/* Repeat password */}
           <div className="sign-field">
             <input type="password" ref={passwordConfirmRef} required />
             <label

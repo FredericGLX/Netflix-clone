@@ -1,8 +1,8 @@
-import Movie from '../Movie/Movie';
+import { useContext } from 'react';
 import { ContentContext } from '../contexts/ContentContext';
+import Movie from '../Movie/Movie';
 import { motion } from 'framer-motion';
 import { movieFade } from '../helper/motionHelper';
-import { useContext } from 'react';
 
 const RowsMovies = () => {
   const {
@@ -11,6 +11,7 @@ const RowsMovies = () => {
     moviesComedyData,
     moviesHorrorData,
     moviesAnimationData,
+    moviesDocumentaryData,
   } = useContext(ContentContext);
 
   return (
@@ -29,6 +30,7 @@ const RowsMovies = () => {
         isVertical={true}
       />
       <Movie movies={moviesAnimationData} rowTitle={'Animation'} />
+      <Movie movies={moviesDocumentaryData} rowTitle={'Documentaries'} />
       <Movie movies={moviesHorrorData} rowTitle={'Horror'} />
     </motion.div>
   );

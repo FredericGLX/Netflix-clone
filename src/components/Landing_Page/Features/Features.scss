@@ -1,3 +1,5 @@
+@import '../../../scss/mixin';
+
 .features-container {
   background-color: #000;
   color: #fff;
@@ -28,8 +30,11 @@
 
 // ***** RESPONSIVE *****
 
-/* 768px display */
-@media (min-width: 48rem) {
+@include respond(small) {
+  .feature-titles {
+    margin: 0 12vw;
+    text-align: center;
+  }
   .feature-main-title {
     font-size: 3.8rem;
   }
@@ -42,19 +47,19 @@
   }
 }
 
-/* 1024px display */
-@media (min-width: 64rem) {
+@include respond(large) {
   .feature-titles {
     text-align: left;
     width: 45rem;
   }
 
   .feature-main-title {
-    font-size: 5rem;
+    margin-top: 1rem;
+    font-size: 3.6rem;
   }
 
   .feature-subtitle {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
   }
 
   .features-container {

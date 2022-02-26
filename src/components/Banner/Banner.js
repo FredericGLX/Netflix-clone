@@ -2,8 +2,8 @@ import './Banner.scss';
 import { image_url } from '../helper/requests';
 import { getRandomNumber, reduceText } from '../helper/helper';
 import { BsPlayFill } from 'react-icons/bs';
-import ModalBtn from '../Modal/ModalBtn';
 import { BiInfoCircle } from 'react-icons/bi';
+import ModalBtn from '../Modal/ModalBtn';
 import { motion } from 'framer-motion';
 import { bannerFade, bannerTitle, bannerCaption } from '../helper/motionHelper';
 

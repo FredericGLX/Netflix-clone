@@ -63,7 +63,6 @@
     margin-right: 6px;
     border-radius: 1px;
   }
-
   .navbar-caret {
     &active {
       transition: all 0.2s;
@@ -99,7 +98,6 @@
     width: 9rem;
     font-size: 1.3rem;
   }
-
   @include respond(large) {
     width: 10rem;
     height: 3.25rem;
@@ -135,7 +133,6 @@
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     transition: all 0.1s;
     cursor: pointer;
-
     &:hover {
       color: #ccc;
     }

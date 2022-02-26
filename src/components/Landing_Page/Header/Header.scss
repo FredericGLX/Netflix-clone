@@ -1,17 +1,19 @@
-$red-netflix: #e50914;
+@import '../../../scss/mixin';
 
 .header {
   display: flex;
   justify-content: space-between;
 }
 
-.logo {
-  width: 15rem;
-  margin: 0.4rem 0 0 1rem;
+.header-logo {
+  @include respond(xsmall) {
+    width: 14rem;
+    margin: 0.4rem 0 0 1rem;
+  }
 }
 
 .btn-sign-in {
-  background-color: $red-netflix;
+  background-color: #e50914;
   border: none;
   border-radius: 3px;
   color: #fff;
@@ -33,20 +35,21 @@ $red-netflix: #e50914;
     url(../img/landing_page_background.jpg);
   background-position: top;
   background-size: cover;
-  height: 90vh;
+  height: 85vh;
   position: relative;
   text-align: center;
   color: #fff;
 }
 
 .btn-get-started {
-  background-color: $red-netflix;
+  background-color: #e50914;
   border: none;
   color: #fff;
   height: 4rem;
   padding: 0 1rem;
   font-size: 1.5rem;
   border: none;
+  border-radius: 3px;
   cursor: pointer;
 }
 
@@ -59,12 +62,40 @@ $red-netflix: #e50914;
 
 .header-titles {
   h1 {
-    font-size: 3.75rem;
+    @include respond(xsmall) {
+      font-size: 3rem;
+    }
+    @include respond(small) {
+      font-size: 3.6rem;
+    }
+    @include respond(medium) {
+      font-size: 4rem;
+    }
+    @include respond(large) {
+      font-size: 4.4rem;
+    }
+    @include respond(xlarge) {
+      font-size: 4.8rem;
+    }
   }
-
   p {
     margin-top: 0.8rem;
-    font-size: 1.95rem;
+    font-size: 2.4rem;
+    @include respond(xsmall) {
+      font-size: 2rem;
+    }
+    @include respond(small) {
+      font-size: 2.2rem;
+    }
+    @include respond(medium) {
+      font-size: 2.4rem;
+    }
+    @include respond(large) {
+      font-size: 2.6rem;
+    }
+    @include respond(xlarge) {
+      font-size: 2.8rem;
+    }
   }
 }
 
@@ -72,10 +103,12 @@ $red-netflix: #e50914;
   width: 80vw;
 
   p {
-    margin-top: 1.8rem;
-    color: #fff;
-    font-size: 1.44rem;
-    margin-bottom: 1.2rem;
+    @include respond(xsmall) {
+      margin-top: 1.8rem;
+      color: #fff;
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+    }
   }
 }
 
@@ -134,102 +167,4 @@ $red-netflix: #e50914;
   left: 0.3px;
   font-weight: 700;
   padding: 0 6px;
-}
-
-/* 1450+ px display */
-@media (min-width: 90rem) {
-  .header-main-container {
-    height: 80vh;
-  }
-
-  .header-titles {
-    h1 {
-      font-size: 4.8rem;
-    }
-
-    p {
-      font-size: 2rem;
-    }
-  }
-}
-
-/* 950px display */
-@media (max-width: 59.375rem) {
-  .header-main-container {
-    height: 100vh;
-  }
-  .cta-form-container {
-    width: 50vw;
-
-    p {
-      font-size: 2rem;
-      margin-top: 1rem;
-    }
-  }
-  .email-form {
-    display: inline-block;
-  }
-  .btn-get-started {
-    margin-top: 1rem;
-    font-size: 1.4rem;
-    height: 4rem;
-  }
-  .field {
-    input {
-      width: 38rem;
-    }
-  }
-}
-
-/* 768px display */
-@media (max-width: 48rem) {
-  .header-main-container {
-    height: 71vh;
-  }
-  .cta-form-container {
-    width: 65vw;
-  }
-}
-
-/* 590px display */
-@media (max-width: 36.875rem) {
-  .cta-form-container {
-    width: 80vw;
-  }
-}
-
-/* 480px display */
-@media (max-width: 30rem) {
-  .cta-form-container {
-    width: 90vw;
-  }
-  .header-titles {
-    h1 {
-      font-size: 3rem;
-    }
-    p {
-      font-size: 1.8rem;
-    }
-  }
-  .cta-form-container {
-    p {
-      font-size: 1.8rem;
-    }
-  }
-}
-
-/* 440px display */
-@media (max-width: 27.5rem) {
-  .header-main-container {
-    height: 62vh;
-  }
-  .cta-form-container {
-    width: 100vw;
-  }
-
-  .field {
-    input {
-      width: 80vw;
-    }
-  }
 }

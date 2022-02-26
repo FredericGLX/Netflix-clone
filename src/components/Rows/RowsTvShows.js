@@ -1,12 +1,11 @@
-import Movie from '../Movie/Movie';
+import { useContext } from 'react';
 import { ContentContext } from '../contexts/ContentContext';
+import Movie from '../Movie/Movie';
 import { motion } from 'framer-motion';
 import { movieFade } from '../helper/motionHelper';
-import { useContext } from 'react';
 
 const RowsTvShows = () => {
   const {
-    // popularData,
     tvShowsComedyData,
     trendingTvShows,
     tvShowsMysteryData,

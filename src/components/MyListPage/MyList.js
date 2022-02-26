@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ModalBtn from '../Modal/ModalBtn';
+import PosterInfo from '../PosterInfo/PosterInfo';
 import { image_url } from '../helper/requests';
 import netflixLogo from '../Search/img/netflix_alt_logo.jpeg';
 import { motion } from 'framer-motion';
@@ -8,7 +9,6 @@ import {
   watchlistHasResults,
   watchlistNoResults,
 } from '../helper/motionHelper';
-import PosterInfo from '../PosterInfo/PosterInfo';
 
 const MyList = () => {
   let [storageArray, setStorageArray] = useState([]);
