@@ -46,7 +46,7 @@ const SignUp = () => {
         <form className="sign-form" onSubmit={handleSubmit}>
           {error && alert(error)}
           <div className="sign-field">
-            <input type="text" ref={emailRef} autoComplete="email" required />
+            <input type="text" ref={emailRef} required />
             <label className="sign-label-text" title="Email"></label>
           </div>
           <div className="sign-field">
