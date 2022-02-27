@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './components/App';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { AuthProvider } from './components/contexts/AuthContext';
 import { ContentProvider } from './components/contexts/ContentContext';
 import { SearchProvider } from './components/contexts/SearchContext';
 
 ReactDOM.render(
-  <HashRouter>
+  <BrowserRouter>
     <AuthProvider>
       <ContentProvider>
         <SearchProvider>
@@ -17,7 +17,7 @@ ReactDOM.render(
         </SearchProvider>
       </ContentProvider>
     </AuthProvider>
-  </HashRouter>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
