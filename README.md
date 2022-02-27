@@ -1,14 +1,14 @@
 # Netflix clone
 
-## Desktop version video
-
-https://user-images.githubusercontent.com/79892502/155830574-fa87736c-0e0b-4922-9efc-87ed78a02c0b.mp4
-
-## About
-
 ## About
 
 I wanted to challenge myself by coding a clone of a popular web app. While browsing on the internet looking for ideas I stumbled upon the very realistic clone of [Davide Mandelli](https://github.com/Th3Wall) which convinced me to give it a try.
+
+Here is the website: https://fredflix.netlify.app/
+
+Here are some credentials in case you want don't want to create an account:
+- ID: johndoe@gmail.com
+- Password: helloworld
 
 ## Features
 
@@ -29,6 +29,10 @@ I wanted to challenge myself by coding a clone of a popular web app. While brows
 - Swiper JS
 - Framer Motion
 - Firebase (Authentification)
+
+## Desktop version video
+
+https://user-images.githubusercontent.com/79892502/155830574-fa87736c-0e0b-4922-9efc-87ed78a02c0b.mp4
 
 ## Mobile version
 
