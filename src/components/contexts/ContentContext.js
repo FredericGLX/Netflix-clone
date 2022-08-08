@@ -11,12 +11,12 @@ export function ContentProvider({ children }) {
   const [trendingMovies, setTrendingMovies] = useState({});
   const [moviesComedyData, setMoviesComedyData] = useState({});
   const [moviesHorrorData, setMoviesHorrorData] = useState({});
-  const [moviesDocumentaryData, setMoviesDocumentaryData] = useState({});
+  const [moviesActionData, setMoviesActionData] = useState({});
   const [moviesAnimationData, setMoviesAnimationData] = useState({});
   const [moviesScifiData, setMoviesScifiData] = useState({});
   // TV Shows
   const [trendingTvShows, setTrendingTvShows] = useState({});
-  const [tvShowsComedyData, setTvShowsComedyData] = useState({});
+  const [tvShowsDramaData, setTvShowsDramaData] = useState({});
   const [tvShowsMysteryData, setTvShowsMysteryData] = useState({});
   const [tvShowsCrimeData, setTvShowsCrimeData] = useState({});
   const [tvShowsAnimationData, setTvShowsAnimationData] = useState({});
@@ -52,9 +52,9 @@ export function ContentProvider({ children }) {
     const { data } = await axios.get(requests.movies_sci_fi);
     setMoviesScifiData(data.results);
   };
-  const fetchMoviesDocumentary = async () => {
-    const { data } = await axios.get(requests.movies_documentary);
-    setMoviesDocumentaryData(data.results);
+  const fetchMoviesAction = async () => {
+    const { data } = await axios.get(requests.movies_action);
+    setMoviesActionData(data.results);
   };
 
   // TV SHOWS
@@ -63,8 +63,8 @@ export function ContentProvider({ children }) {
     setTrendingTvShows(data.results);
   };
   const fetchTvShowsComedy = async () => {
-    const { data } = await axios.get(requests.series_comedy);
-    setTvShowsComedyData(data.results);
+    const { data } = await axios.get(requests.series_drama);
+    setTvShowsDramaData(data.results);
   };
   const fetchTvShowsMystery = async () => {
     const { data } = await axios.get(requests.series_mystery);
@@ -90,7 +90,7 @@ export function ContentProvider({ children }) {
       fetchMoviesPopular();
       fetchMoviesComedy();
       fetchMoviesHorror();
-      fetchMoviesDocumentary();
+      fetchMoviesAction();
       fetchMoviesAnimation();
       fetchMoviesScifi();
     };
@@ -115,11 +115,11 @@ export function ContentProvider({ children }) {
     moviesPopularData,
     moviesComedyData,
     moviesHorrorData,
-    moviesDocumentaryData,
+    moviesActionData,
     moviesAnimationData,
     moviesScifiData,
     // TV Shows
-    tvShowsComedyData,
+    tvShowsDramaData,
     trendingTvShows,
     tvShowsMysteryData,
     tvShowsMusicData,

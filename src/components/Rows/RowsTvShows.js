@@ -6,7 +6,7 @@ import { movieFade } from '../helper/motionHelper';
 
 const RowsTvShows = () => {
   const {
-    tvShowsComedyData,
+    tvShowsDramaData,
     trendingTvShows,
     tvShowsMysteryData,
     tvShowsMusicData,
@@ -22,7 +22,7 @@ const RowsTvShows = () => {
       animate="visible"
       exit="hidden"
     >
-      <Movie movies={tvShowsComedyData} rowTitle={'Comedy'} />
+      <Movie movies={tvShowsDramaData} rowTitle={'Drama'} />
       <Movie movies={tvShowsAnimationData} rowTitle={'Animation'} />
       <Movie
         movies={trendingTvShows}

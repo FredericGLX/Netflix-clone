@@ -11,7 +11,7 @@ const RowsMovies = () => {
     moviesComedyData,
     moviesHorrorData,
     moviesAnimationData,
-    moviesDocumentaryData,
+    moviesActionData,
   } = useContext(ContentContext);
 
   return (
@@ -30,7 +30,7 @@ const RowsMovies = () => {
         isVertical={true}
       />
       <Movie movies={moviesAnimationData} rowTitle={'Animation'} />
-      <Movie movies={moviesDocumentaryData} rowTitle={'Documentaries'} />
+      <Movie movies={moviesActionData} rowTitle={'Action'} />
       <Movie movies={moviesHorrorData} rowTitle={'Horror'} />
     </motion.div>
   );

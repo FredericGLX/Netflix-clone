@@ -6,18 +6,15 @@ export const image_url = 'https://image.tmdb.org/t/p/original/';
 
 export const requests = {
   // MOVIES
-  fetchTrending: base_url + '/trending/movie&tv/week?' + API_KEY,
+  fetchTrending: base_url + '/trending/movie/week?' + API_KEY,
   trending_movies: base_url + '/trending/movie/day?' + API_KEY,
   movies_popular: base_url + '/movie/popular?' + API_KEY,
   movies_comedy:
     base_url + '/discover/movie?' + API_KEY + `&with_genres=${genres.comedy}`,
   movies_horror:
     base_url + '/discover/movie?' + API_KEY + `&with_genres=${genres.horror}`,
-  movies_documentary:
-    base_url +
-    '/discover/movie?' +
-    API_KEY +
-    `&with_genres=${genres.documentary}`,
+  movies_action:
+    base_url + '/discover/movie?' + API_KEY + `&with_genres=${genres.action}`,
   movies_animation:
     base_url +
     '/discover/movie?' +
@@ -27,8 +24,8 @@ export const requests = {
     base_url + '/discover/tv?' + API_KEY + `&with_genres=${genres.sci_fi}`,
   // TV SHOWS
   trending_series: base_url + '/trending/tv/day?' + API_KEY,
-  series_comedy:
-    base_url + '/discover/tv?' + API_KEY + `&with_genres=${genres.comedy}`,
+  series_drama:
+    base_url + '/discover/tv?' + API_KEY + `&with_genres=${genres.drama}`,
   series_mystery:
     base_url + '/discover/tv?' + API_KEY + `&with_genres=${genres.mystery}`,
   series_crime:
