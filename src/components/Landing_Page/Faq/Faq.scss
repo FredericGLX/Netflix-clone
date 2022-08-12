@@ -37,6 +37,10 @@
   border: none;
   color: #fff;
   cursor: pointer;
+
+  @include respond(medium) {
+    font-size: 1.6rem;
+  }
 }
 
 // Accordion component

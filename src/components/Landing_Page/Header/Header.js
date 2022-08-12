@@ -21,12 +21,10 @@ const Header = () => {
           <p>Watch anywhere. Cancel at any time.</p>
         </div>
         <div className="cta-form-container">
-          <div>
-            <p>
-              Ready to watch Netflix? Enter your email to create or restart your
-              membership.
-            </p>
-          </div>
+          <p>
+            Ready to watch Netflix? Enter your email to create or restart your
+            membership.
+          </p>
           <Link to={'/signup'}>
             <button className="btn-get-started">Get started</button>
           </Link>

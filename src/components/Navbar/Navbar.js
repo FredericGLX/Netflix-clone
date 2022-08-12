@@ -101,7 +101,7 @@ const Navbar = () => {
           <img className="navbar-avatar" src={avatar} alt="avatar logo" />
           <AiOutlineCaretDown
             className={`navbar-caret${isAvatarClicked ? 'active' : 'inactive'}`}
-            size="1.4rem"
+            size="1.6rem"
             color="#fff"
           />
           <div

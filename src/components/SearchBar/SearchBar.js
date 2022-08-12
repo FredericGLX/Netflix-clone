@@ -40,7 +40,7 @@ const SearchBar = () => {
         value={query}
       />
       <div onClick={handleClick}>
-        <BiSearch className="search-icon" size="2.5rem" color="#fff" />
+        <BiSearch className="search-icon" size="2.7rem" color="#fff" />
       </div>
     </div>
   );

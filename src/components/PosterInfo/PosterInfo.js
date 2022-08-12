@@ -18,10 +18,10 @@ const PosterInfo = ({ title, genres }) => {
     <div className="poster-cart">
       <div className="poster-icons">
         <span>
-          <IoIosPlayCircle size={'27px'} className="poster-icon" />
+          <IoIosPlayCircle size={'31px'} className="poster-icon" />
         </span>
         <span>
-          <IoChevronDownCircleOutline size={'28px'} className="poster-icon" />
+          <IoChevronDownCircleOutline size={'32px'} className="poster-icon" />
         </span>
       </div>
       <div className="poster-text">

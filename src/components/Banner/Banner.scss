@@ -57,7 +57,7 @@
       font-size: 5rem;
     }
     @include respond(large) {
-      font-size: 5.5rem;
+      font-size: 6.4rem;
     }
   }
 
@@ -119,8 +119,8 @@
     text-align: left;
     width: 50%;
     .banner-content-description {
-      max-width: 30vw;
-      font-size: 1.6rem;
+      max-width: 32vw;
+      font-size: 1.8rem;
     }
   }
 }

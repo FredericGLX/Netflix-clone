@@ -1,3 +1,5 @@
+@import '../../scss/mixin';
+
 .sign-page-container {
   background-image: linear-gradient(
       to top,
@@ -34,9 +36,15 @@
 }
 
 .sign-title {
-  text-align: left;
+  text-align: center;
   font-size: 1.4rem;
-  margin: 4rem 0 2rem 5rem;
+  margin: 3rem 0 2rem 0;
+  @include respond(small) {
+    font-size: 1.6rem;
+    text-align: left;
+    margin: 4rem 0 2rem 5rem;
+
+  }
 }
 
 .sign-field {
@@ -47,7 +55,7 @@
     position: absolute;
     top: 1.2rem;
     left: 6.4rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #666;
 
     transition: 0.05s all;
@@ -57,7 +65,7 @@
     border-radius: 5px;
     border: none;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 
     height: 4rem;
     margin-bottom: 1rem;
@@ -92,11 +100,12 @@
   width: 26rem;
   height: 4rem;
   cursor: pointer;
+  font-size: 1.6rem;
 }
 
 .sign-signup-now {
   color: #737373;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-top: 2rem;
   font-weight: 500;
 }
@@ -132,7 +141,6 @@
       width: 90%;
     }
   }
-
   .sign-btn-sign-in {
     width: 90%;
   }

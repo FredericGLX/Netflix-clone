@@ -1,3 +1,6 @@
+@import '../../scss/mixin';
+
+
 .searchbar-container {
   display: flex;
   margin-right: 1.2rem;
@@ -19,6 +22,10 @@
     &::placeholder {
       color: #777;
       opacity: 1;
+    }
+
+    @include respond(medium) {
+      font-size: 1.4rem;
     }
   }
 
